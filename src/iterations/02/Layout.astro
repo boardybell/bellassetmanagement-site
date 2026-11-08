@@ -1,0 +1,39 @@
+---
+// Iteration 02, Ledger: Cornice. Three pages under a fixed left rail.
+import Base from '../../layouts/Base.astro';
+import Wordmark from '../../components/Wordmark.astro';
+import Menu from '../../components/Menu.astro';
+import Legal from '../../components/Legal.astro';
+import { company, contact } from '../../content/site';
+import { url } from '../../lib/url';
+import './style.css';
+interface Props { title: string; current: string; description?: string }
+const { title, current, description } = Astro.props;
+const links = [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }];
+const home = current === '';
+---
+<Base title={title} description={description} noindex class="i02">
+  <div class="shell">
+    <header class="rail">
+      <div class="rail-top">
+        {home
+          ? <h1 class="rail-mark"><Wordmark width={232} /></h1>
+          : <a class="rail-mark" href={url('/iterations/02/')}><Wordmark width={232} /></a>}
+        <Menu panel="i02-nav" class="menu-btn" />
+      </div>
+      <nav class="rail-nav" id="i02-nav" aria-label="Primary">
+        <ul>
+          {links.map((l) => <li><a href={url(`/iterations/02/${l.href}`)} aria-current={l.href === current ? 'page' : undefined}>{l.label}</a></li>)}
+        </ul>
+      </nav>
+      <div class="rail-foot">
+        <p class="meta">{company.city}</p>
+        <p class="rail-email"><a href={`mailto:${contact.email}`}>{contact.email.split('@')[0]}@<wbr />{contact.email.split('@')[1]}</a></p>
+      </div>
+    </header>
+    <div class="content">
+      <main id="main"><slot /></main>
+    </div>
+  </div>
+  <footer class="foot"><Legal class="legal" /></footer>
+</Base>

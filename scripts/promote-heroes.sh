@@ -20,5 +20,5 @@ pick 09-hero-06c-river    1 warm seq-06c-river     4:5 0.5,0.5 --gamma 1.1
 pick 10-hero-06d-barn     1 warm seq-06d-barn      4:5
 pick 11-hero-07-door      1 warm plate-07-door     4:5
 pick 12-hero-08-horizon   1 navy band-08-horizon   4:1
-pick 13-hero-09-granite   1 navy hero-09-granite   16:9
+pick 13-hero-09-granite   1 navy hero-09-granite   16:9 0.5,0.5 --lift 0.06
 pick 14-hero-10-arcade    1 navy hero-10-arcade    16:9

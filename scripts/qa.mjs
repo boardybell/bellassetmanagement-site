@@ -231,7 +231,7 @@ for (const p of pages) {
   const visual = [];
   for (const w of WIDTHS) {
     await page.setViewportSize({ width: w, height: w < 768 ? 844 : 900 });
-    await page.evaluate(() => { document.querySelectorAll('[data-reveal]').forEach((e) => e.classList.add('in')); });
+    await page.evaluate(() => { window.scrollTo(0, 0); document.querySelectorAll('[data-reveal]').forEach((e) => e.classList.add('in')); });
     await page.waitForTimeout(650);
     const issues = await page.evaluate(() => {
       const out = [];

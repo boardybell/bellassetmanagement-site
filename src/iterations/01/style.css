@@ -39,7 +39,7 @@
 .i01 .principal-bio{margin-top:1.5rem;display:grid;gap:1rem}
 .i01 .contact{display:grid;grid-template-columns:1fr 1fr;gap:2rem;text-align:center}
 .i01 .contact-address{font-style:normal;margin-top:.75rem;display:grid}
-.i01 .contact-email{margin-top:.75rem;overflow-wrap:anywhere}
+.i01 .contact-email{margin-top:.75rem}
 .i01 footer{margin-top:clamp(5rem,10vw,8rem);background:var(--navy);color:rgba(253,246,236,.86);padding:clamp(3rem,6vw,4.5rem) var(--gutter) 2.5rem}
 .i01 .foot{max-width:68rem;margin:0 auto;display:grid;gap:2rem}
 .i01 .foot-mark img{width:clamp(180px,18vw,240px);height:auto}

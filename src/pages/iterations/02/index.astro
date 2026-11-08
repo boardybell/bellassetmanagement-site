@@ -1,0 +1,21 @@
+---
+import Layout from '../../../iterations/02/Layout.astro';
+import Photo from '../../../components/Photo.astro';
+import Contact from '../../../components/content/Contact.astro';
+import hero from '../../../assets/img/hero-02-cornice.jpg';
+import { company, statement } from '../../../content/site';
+import { iterations } from '../../../iterations/registry';
+---
+<Layout title={company.name} current="">
+  <div class="band"><Photo src={hero} alt="" priority sizes="(min-width: 900px) calc(100vw - 18rem), 100vw" /></div>
+  <div class="page">
+    <p class="eyebrow meta" data-reveal>Holding company · {company.city}</p>
+    <p class="thesis" data-reveal>{iterations[1].thesis}</p>
+    <p class="statement" data-reveal>{statement}</p>
+    <p class="descriptor" data-reveal>{company.descriptor}</p>
+    <section class="sect" aria-labelledby="h-contact">
+      <h2 id="h-contact" data-reveal>Contact</h2>
+      <div class="contact"><Contact /></div>
+    </section>
+  </div>
+</Layout>
