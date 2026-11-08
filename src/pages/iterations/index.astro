@@ -10,13 +10,13 @@ import { url } from '../../lib/url';
 const shots = import.meta.glob<{ default: ImageMetadata }>('../../assets/gallery/*.png', { eager: true });
 const shot = (n: string, kind: 'desktop' | 'mobile') => shots[`../../assets/gallery/${n}-${kind}.png`]?.default;
 ---
-<Base title="Design iterations · Bell Asset Management" description="Ten design iterations for the Bell Asset Management website, for internal review." noindex>
+<Base title="Design iterations · Bell Asset Management" description="Eleven design iterations for the Bell Asset Management website, for internal review." noindex>
   <header class="g-head">
     <Wordmark width={300} />
   </header>
   <main id="main" class="g-main">
     <h1>Design iterations</h1>
-    <p class="g-lede">Ten complete builds in four families. Each link opens the live iteration. Choose by number; hybrids are welcome and become iteration 11.</p>
+    <p class="g-lede">Eleven complete builds in four families. Each link opens the live iteration. Choose by number; hybrids are welcome.</p>
     <ol class="g-grid">
       {iterations.map((it) => {
         const d = shot(it.n, 'desktop'); const m = shot(it.n, 'mobile');

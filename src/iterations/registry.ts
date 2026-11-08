@@ -40,4 +40,7 @@ export const iterations: Iteration[] = [
   { n: '10', family: 'Inverse', name: 'Arcade', thesis: 'Built to be kept, not sold.',
     rationale: 'A navy hero that gives way to a cream body as the reader scrolls, across three pages. Pairs the weight of the report covers with the readability of the Ledger pages.',
     pages: [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }] },
+  { n: '11', family: 'Architectural', name: 'Portico', thesis: 'Built square, and meant to be handed down.',
+    rationale: 'Drawn from the vocabulary of an 1850s eastern North Carolina town house: white frame, Greek Revival symmetry, Italianate brackets, and a later two-story classical portico. The layout borrows the bones: a symmetrical header, entablature bands over each section, and holdings set in pilaster bays.',
+    pages: [{ href: '', label: 'Home' }] },
 ];

@@ -1,0 +1,3 @@
+Saved `raw-1.png` and `raw-2.png` as untouched 1024x1536 portrait variants using built-in image generation.
+
+`NOTES.md` contains the exact prompt for each. Both images were visually checked against the brief.

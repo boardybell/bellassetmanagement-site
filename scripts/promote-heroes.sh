@@ -24,3 +24,7 @@ pick 12-hero-08-horizon   1 navy band-08-horizon   4:1
 pick 13-hero-09-granite   1 navy hero-09-granite   16:9 0.5,0.5 --lift 0.06
 pick 14-hero-10-arcade    1 navy hero-10-arcade    16:9
 pick 05-hero-04-timber    2 warm sect-04-beams     4:5  0.3,0.45
+# Iteration 11, Portico (Greek Revival town-house vocabulary)
+pick 20-hero-11-portico   2 navy hero-11-portico   16:9 0.5,0.45
+pick 21-detail-11-cornice 2 warm plate-11-cornice  4:5  0.5,0.4
+pick 22-detail-11-entry   1 warm plate-11-entry    4:5  0.5,0.5

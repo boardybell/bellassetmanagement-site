@@ -1,0 +1,73 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Wordmark from '../../../components/Wordmark.astro';
+import Photo from '../../../components/Photo.astro';
+import Menu from '../../../components/Menu.astro';
+import Legal from '../../../components/Legal.astro';
+import Holdings from '../../../components/content/Holdings.astro';
+import Principal from '../../../components/content/Principal.astro';
+import Contact from '../../../components/content/Contact.astro';
+import hero from '../../../assets/img/hero-11-portico.jpg';
+import cornice from '../../../assets/img/plate-11-cornice.jpg';
+import entry from '../../../assets/img/plate-11-entry.jpg';
+import { company, statement } from '../../../content/site';
+import { iterations } from '../../../iterations/registry';
+import '../../../iterations/11/style.css';
+const it = iterations.find((x) => x.n === '11')!;
+---
+<Base title={company.name} noindex class="i11" themeColor="#0D1626">
+  <header class="hero" data-ground="dark">
+    <Photo src={hero} alt="" priority class="hero-img" />
+    <div class="bar">
+      <h1><Wordmark tone="cream" width={300} /></h1>
+      <Menu panel="i11-nav" class="menu-btn" />
+      <nav class="nav" id="i11-nav" aria-label="Primary">
+        <ul class="left"><li><a href="#company">Company</a></li><li><a href="#holdings">Holdings</a></li></ul>
+        <ul class="right"><li><a href="#principal">Principal</a></li><li><a href="#contact">Contact</a></li></ul>
+      </nav>
+    </div>
+    <div class="hero-copy">
+      <p class="thesis" data-reveal>{it.thesis}</p>
+      <p class="hero-sub" data-reveal>Holding company · {company.city}</p>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <section id="company" aria-labelledby="h-company">
+      <div class="entab"><div class="entab-frieze"><span class="num">I</span><h2 id="h-company">Company</h2></div></div>
+      <div class="company">
+        <figure class="plate" data-reveal>
+          <div class="plate-frame"><Photo src={cornice} alt="" sizes="(min-width: 900px) 26rem, 20rem" widths={[400, 640, 1024]} /></div>
+          <figcaption class="cap">Bracketed cornice</figcaption>
+        </figure>
+        <div>
+          <p class="descriptor meta" data-reveal>{company.descriptor}</p>
+          <p class="statement" data-reveal>{statement}</p>
+        </div>
+      </div>
+    </section>
+    <section id="holdings" aria-labelledby="h-holdings">
+      <div class="entab"><div class="entab-frieze"><span class="num">II</span><h2 id="h-holdings">Holdings</h2></div></div>
+      <div class="bays"><Holdings level={3} /></div>
+    </section>
+    <section id="principal" aria-labelledby="h-principal">
+      <div class="entab"><div class="entab-frieze"><span class="num">III</span><h2 id="h-principal">Principal</h2></div></div>
+      <div class="principal"><Principal level={3} portraitWidth={272} /></div>
+    </section>
+    <section id="contact" aria-labelledby="h-contact">
+      <div class="entab"><div class="entab-frieze"><span class="num">IV</span><h2 id="h-contact">Contact</h2></div></div>
+      <div class="contact-wrap">
+        <figure class="plate" data-reveal>
+          <div class="plate-frame"><Photo src={entry} alt="" sizes="18rem" widths={[400, 640]} /></div>
+          <figcaption class="cap">Sidelights and transom</figcaption>
+        </figure>
+        <div class="contact bays"><Contact /></div>
+      </div>
+    </section>
+  </main>
+  <footer data-ground="dark">
+    <div class="wrap foot">
+      <Wordmark tone="cream" width={200} alt="" eager={false} />
+      <Legal class="legal" />
+    </div>
+  </footer>
+</Base>

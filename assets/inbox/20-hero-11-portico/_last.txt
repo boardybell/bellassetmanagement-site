@@ -1,0 +1,1 @@
+Saved two untouched 1536x1024 variants as `raw-1.png` and `raw-2.png`. Exact prompts are recorded in `NOTES.md`. No grading or retouching applied.

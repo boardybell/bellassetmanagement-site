@@ -6,7 +6,7 @@ import sharp from 'sharp';
 import { existsSync, mkdirSync } from 'node:fs';
 mkdirSync('src/assets/gallery', { recursive: true });
 mkdirSync('public/gallery', { recursive: true });
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 11; i++) {
   const n = String(i).padStart(2, '0');
   const dir = `qa-report/shots/iterations_${n}`;
   if (!existsSync(`${dir}/1440.png`)) { console.log(`skip ${n}: no QA screenshots`); continue; }

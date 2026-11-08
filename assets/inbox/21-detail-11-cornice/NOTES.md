@@ -1,0 +1,16 @@
+# Brief 21: detail-11-cornice
+
+Generated with the built-in image generation tool. Two original 1024x1536 portrait photographs. PNG outputs copied untouched, with no grading or retouching.
+
+## raw-1.png
+
+Exact prompt:
+
+Create one original photograph, portrait 1024x1536 pixels. Use case: photorealistic-natural. Architectural detail plate displayed about 420 px wide. Close view looking upward at the eave of an original 1850s eastern North Carolina town house, white-painted wood clapboard, Greek Revival vocabulary with Italianate bracketed eaves. A deep projecting cornice above a wide plain frieze board, supported by a clearly readable pair of substantial wooden Italianate scroll brackets. Show the complete paired brackets with comfortable space around their contours and crisp bracket shadows reaching onto the horizontal clapboards below. Oblique view along the wall with the cornice receding gently toward the upper right. Raking afternoon sunlight, naturally white painted timber with subtle real grain and restrained age, true photographic realism, natural 50mm lens perspective, restrained neutral color and natural exposure. The wall fills most of the portrait; only a small sliver of pale sky if needed. The continuous architecture may extend beyond the image, but no individual bracket or decorative feature is awkwardly cut off. Original invented building, do not reproduce a specific real building. No stylization, no illustration, no cinematic grading, no retouching effects. No people or body parts, animals, vehicles, text, letters, numbers, house numbers, signage, mailboxes, flags, plaques, logos, watermarks, satellite dishes, air conditioners, wiring, or any modern additions.
+
+## raw-2.png
+
+Exact prompt:
+
+Create one original photograph, portrait 1024x1536 pixels. Use case: photorealistic-natural. Architectural detail plate for display at about 420 px wide. An upward-looking close architectural photograph of white-painted timber eaves on an invented 1850s eastern North Carolina town house, Greek Revival structure with Italianate ornament. Composition: a closely spaced matching pair of carved Italianate S-scroll wooden brackets sits together near the upper middle of the portrait, both fully visible with generous breathing room. Deep overhanging cornice with simple layered moldings, a wide uninterrupted plain frieze board behind the brackets, and horizontal white clapboards filling the lower half. Photograph from below at a mild three-quarter angle, natural 50mm lens perspective, not extreme wide angle. Strong raking late afternoon sunlight from the side produces crisp elongated bracket silhouettes across the frieze and clapboards. Restrained photographic realism, natural white paint, slight authentic wood grain and paint wear, ordinary daylight exposure, no stylization or dramatic color grade. Keep the scroll profiles and complete bracket ends safely inside the frame, and let only continuous wall and cornice planes run through the edges. Original architecture, no identifiable real building. No people or body parts, no animals, no vehicles, no text, letters, numbers, house numbers, signage, mailboxes, flags, plaques, logos, watermarks, satellite dishes, air conditioners, wiring, or modern additions. No retouching effects.
+

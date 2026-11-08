@@ -1,0 +1,7 @@
+Saved two untouched 1024x1536 portrait variants using built-in image generation:
+
+- `raw-1.png`
+- `raw-2.png`
+- `NOTES.md` with both exact prompts
+
+No grading or retouching applied.
