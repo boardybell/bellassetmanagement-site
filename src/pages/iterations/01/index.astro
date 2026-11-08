@@ -1,0 +1,70 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Wordmark from '../../../components/Wordmark.astro';
+import Photo from '../../../components/Photo.astro';
+import Menu from '../../../components/Menu.astro';
+import Legal from '../../../components/Legal.astro';
+import Holdings from '../../../components/content/Holdings.astro';
+import Principal from '../../../components/content/Principal.astro';
+import Contact from '../../../components/content/Contact.astro';
+import hero from '../../../assets/img/hero-01-colonnade.jpg';
+import { company, statement } from '../../../content/site';
+import { iterations } from '../../../iterations/registry';
+import '../../../iterations/01/style.css';
+const it = iterations[0];
+---
+<Base title={company.name} noindex class="i01" themeColor="#0D1626">
+  <header class="hero" data-ground="dark">
+    <Photo src={hero} alt="" priority class="hero-img" />
+    <div class="bar">
+      <h1><Wordmark tone="cream" width={300} /></h1>
+      <Menu panel="i01-nav" class="menu-btn" />
+      <nav class="nav" id="i01-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#holdings">Holdings</a></li>
+          <li><a href="#principal">Principal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero-copy">
+      <p class="thesis" data-reveal>{it.thesis}</p>
+      <p class="hero-sub" data-reveal>Holding company · {company.city}</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="col" aria-label="Statement">
+      <p class="descriptor meta" data-reveal>{company.descriptor}</p>
+      <p class="statement" data-reveal>{statement}</p>
+    </section>
+
+    <div class="rule" aria-hidden="true"><span></span></div>
+
+    <section class="wide" id="holdings" aria-labelledby="h-holdings">
+      <h2 id="h-holdings" data-reveal>Holdings</h2>
+      <div class="holdings"><Holdings level={3} /></div>
+    </section>
+
+    <div class="rule" aria-hidden="true"><span></span></div>
+
+    <section class="wide" id="principal" aria-labelledby="h-principal">
+      <h2 id="h-principal" data-reveal>Principal</h2>
+      <div class="principal"><Principal level={3} portraitWidth={288} /></div>
+    </section>
+
+    <div class="rule" aria-hidden="true"><span></span></div>
+
+    <section class="col" id="contact" aria-labelledby="h-contact">
+      <h2 id="h-contact" data-reveal>Contact</h2>
+      <div class="contact"><Contact /></div>
+    </section>
+  </main>
+
+  <footer data-ground="dark">
+    <div class="foot">
+      <div class="foot-mark"><Wordmark tone="cream" width={240} alt="" eager={false} /></div>
+      <Legal class="legal" />
+    </div>
+  </footer>
+</Base>

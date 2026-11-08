@@ -1,0 +1,13 @@
+---
+import { contact } from '../../content/site';
+interface Props { reveal?: boolean }
+const { reveal = true } = Astro.props;
+---
+<div class="contact-item" data-reveal={reveal ? '' : undefined}>
+  <p class="contact-label meta">{contact.addressLabel}</p>
+  <address class="contact-address">{contact.addressLines.map((l) => <span>{l}</span>)}</address>
+</div>
+<div class="contact-item" data-reveal={reveal ? '' : undefined}>
+  <p class="contact-label meta">Email</p>
+  <p class="contact-email"><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+</div>

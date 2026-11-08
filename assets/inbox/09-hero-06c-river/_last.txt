@@ -1,0 +1,8 @@
+Created in the current directory:
+
+- `raw-1.png`, `raw-2.png` — untouched generated originals
+- `graded-1.png`, `graded-2.png` — warm palette with fine 2% monochrome grain
+- `NOTES.md` — exact prompts and grading method
+- `grade.py` — reproducible grading script
+
+All four images are 1536×1024.

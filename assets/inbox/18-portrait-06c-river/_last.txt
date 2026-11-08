@@ -1,0 +1,3 @@
+Created `raw-1.png` and `raw-2.png`, both 1024×1536 portrait photographs, untouched and ungraded.
+
+`NOTES.md` contains the exact prompts and composition choices for both variants.

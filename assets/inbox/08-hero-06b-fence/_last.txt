@@ -1,0 +1,8 @@
+Saved both 1536×1024 variants in the current directory:
+
+- `raw-1.png`, `raw-2.png` — untouched generated originals.
+- `graded-1.png`, `graded-2.png` — warm palette with fine monochrome grain.
+- `NOTES.md` — exact prompts and grading details.
+- `grade.py` — reproducible grading script.
+
+Both graded images were visually checked. Variant 2 has the cleanest framing, with both fence ends visible.

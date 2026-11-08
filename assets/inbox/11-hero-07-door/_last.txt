@@ -1,0 +1,8 @@
+Created both variants at 1536×1024:
+
+- `raw-1.png`, `raw-2.png` — untouched originals
+- `graded-1.png`, `graded-2.png` — warm palette with fine monochrome grain
+- `NOTES.md` — exact prompts and grading method
+- `grade.py` — reproducible Pillow grading script
+
+Both pulls are centered and fully contained.

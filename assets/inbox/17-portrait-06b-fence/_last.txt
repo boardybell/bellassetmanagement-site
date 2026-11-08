@@ -1,0 +1,3 @@
+Created `raw-1.png` and `raw-2.png`, both 1024×1536 portrait images. Saved untouched, with no downstream grading applied.
+
+`NOTES.md` contains both exact prompts and composition choices.

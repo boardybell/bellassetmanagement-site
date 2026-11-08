@@ -1,0 +1,3 @@
+Created `raw-1.png` and `raw-2.png`, both verified at 1024×1536 and left untouched without grading.
+
+`NOTES.md` contains the exact prompts and composition choices for each variant.

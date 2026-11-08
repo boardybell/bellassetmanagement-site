@@ -97,7 +97,7 @@ for (const p of pages) {
   record(name, isGallery ? 'noindex present (gallery)' : 'indexable (production)', isGallery ? noindex : !noindex, '');
 
   const imgs = [...html.matchAll(/<img\b[^>]*>/g)].map((m) => m[0]);
-  const badImg = imgs.filter((i) => !/\swidth="\d+"/.test(i) || !/\sheight="\d+"/.test(i) || !/\salt="/.test(i));
+  const badImg = imgs.filter((i) => !/\swidth="\d+"/.test(i) || !/\sheight="\d+"/.test(i) || !/\salt(="|\s|>|\/)/.test(i));
   record(name, 'img width/height/alt', badImg.length === 0, badImg.slice(0, 2).join(' '));
 
   const ext = [...html.matchAll(/<a\b[^>]*href="(https?:[^"]+)"[^>]*>/g)];
@@ -156,7 +156,7 @@ process.on('exit', cleanup);
   const { LinkChecker } = await import('linkinator');
   const checker = new LinkChecker();
   const start = `${ORIGIN}${BASE}/${only ? only.replace(/^\//, '') + (only.endsWith('/') ? '' : '/') : ''}`;
-  const r = await checker.check({ path: start, recurse: true, timeout: 15000, linksToSkip: flag('--no-external') ? ['^(?!http://localhost)'] : ['^mailto:'], retry: true });
+  const r = await checker.check({ path: start, recurse: true, timeout: 15000, linksToSkip: flag('--no-external') ? ['^(?!http://localhost)'] : ['^mailto:', '^https://boardybell\\.github\\.io', '^https://bellassetmanagement\\.com'] /* own canonical/og URLs: checked after deploy */, retry: true });
   const broken = r.links.filter((l) => l.state === 'BROKEN').map((l) => `${l.status} ${l.url} (from ${l.parent})`);
   record('(crawl)', `links resolve (${r.links.length} checked)`, broken.length === 0, broken.slice(0, 5).join(' | '));
 }
@@ -224,6 +224,7 @@ for (const p of pages) {
     }
     return out;
   });
+  await page.evaluate(() => document.activeElement?.blur());
   record(name, 'visible focus states', focusIssues.length === 0, focusIssues.slice(0, 2).join(' | '));
 
   // Visual checks at every width: horizontal overflow, clipped text, overlapping text, text touching the viewport edge.

@@ -1,0 +1,8 @@
+Created both 1536×1024 variants:
+
+- `raw-1.png`, `raw-2.png` — untouched originals
+- `graded-1.png`, `graded-2.png` — navy palette with fine monochrome grain
+- `NOTES.md` — exact prompts and grading details
+- `grade.py` — reproducible grading script
+
+Visually checked both graded images.

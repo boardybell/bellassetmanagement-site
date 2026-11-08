@@ -1,0 +1,16 @@
+---
+// The two holdings, exact Section 6 phrasing from src/content/site.ts. Unstyled; iterations style the classes.
+// The Bond Bell & Co paragraph carries data-entity="bbco": the only place regulated words may appear.
+import { holdings } from '../../content/site';
+interface Props { level?: 2 | 3 | 4; reveal?: boolean }
+const { level = 3, reveal = true } = Astro.props;
+const H = `h${level}`;
+---
+{holdings.map((h) => (
+  <article class="holding" data-reveal={reveal ? '' : undefined}>
+    <p class="holding-place meta">{h.place}</p>
+    <H class="holding-name">{h.name}</H>
+    <p class="holding-body" data-entity={h.id === 'bbco' ? 'bbco' : undefined}>{h.body}</p>
+    <p class="holding-link"><a href={h.href} rel="noopener">{h.linkLabel}</a></p>
+  </article>
+))}

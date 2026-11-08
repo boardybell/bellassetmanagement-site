@@ -1,0 +1,17 @@
+# Brief 10: hero 06d-barn
+
+## Variant 1 — exact generation prompt
+
+Create one photograph, landscape 1536x1024 pixels. Photographic realism, natural 50mm lens, restrained cinematic architectural photography for Bell Asset Management, a private holding company. Subject: the plain gable end of an old timber barn with weathered vertical board siding, exactly one small dark square window high on the facade, nothing else on the facade. Frontal symmetrical composition, complete gable peak and both corners comfortably within the image, barn occupies about 70 percent of frame width, narrow empty dry earth foreground, simple pale warm sky. Low late afternoon light from frame left gently rakes the old wood, deep quiet shadows and subdued warm stone and gold-brown tones. Authentic aged timber, simple roof, unpretentious rural architecture, crisp fine wood texture, quiet premium editorial photography, no stylization, no dramatic effects. No people or body parts, no human silhouettes, no animals, no vehicles, no text, letters, numbers, signage, logos, watermarks or flags. No extra buildings, doors, decorations, tools, vegetation or clutter. Nothing awkwardly cropped at frame edges. Use only muted warm neutral colors, no blue, green, red or saturated orange. Save the original untouched generated PNG in the current working directory as raw-1.png.
+
+## Variant 2 — exact generation prompt
+
+Create one photograph, landscape 1536x1024 pixels, photographic realism and natural 65mm lens. Restrained cinematic architectural photograph for a private holding company. A plain gable end of an old timber barn, entirely clad in weathered vertical boards, exactly one small recessed rectangular window slightly above center, no other openings or objects. A distinct composition: camera offset slightly to the right, almost frontal, with a slim sliver of the right side visible; whole barn gable and all roof edges inside frame with generous breathing room. Barn placed a little right of center, broad quiet pale warm sky to the left, thin empty dry earth foreground. Late evening side light brushes the right edge and reveals delicate timber grain while much of the facade remains in soft subdued shadow. Simple old roof, authentic timber construction, minimal and contemplative, warm stone and gold-brown neutrals, realistic tonal range, no stylization. Nothing else. No people, body parts, human silhouettes, animals, vehicles, text, letters, numbers, signs, logos, watermarks, flags, other buildings, doors, tools, decoration or vegetation. No blue, green, red or saturated orange. No awkward edge cropping. Output an original photographic PNG.
+
+## Grading
+
+The untouched tool-returned PNG bytes are saved as raw-1.png and raw-2.png. Both are 1536 × 1024. No resizing or cropping.
+
+Run `python3 grade.py` to reproduce the graded files. Pillow converts each image to luminance, stretches the 0.5th–99.5th percentile luminance range to 0–1, and maps it piecewise linearly through #14120F at 0, a restrained midpoint at 0.5 (80% #6E6759 and 20% #8A6425), and #FDF6EC at 1. The gold-brown contributes subtle warmth without saturated orange. Original chroma is discarded completely.
+
+Fine independent monochrome grain is added to luminance before palette mapping: uniform ±0.02 of full tonal range, deterministic seeds 1061 and 1062. Values are clamped before mapping so every resulting color remains on the specified warm palette ramp. Output is RGB PNG at original dimensions, with no blue, green, red, or saturated orange hue.

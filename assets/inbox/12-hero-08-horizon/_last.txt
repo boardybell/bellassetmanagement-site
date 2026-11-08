@@ -1,0 +1,8 @@
+Created and checked both 1536×1024 variants:
+
+- `raw-1.png`, `raw-2.png` — untouched generated images.
+- `graded-1.png`, `graded-2.png` — dark navy grades with fine monochrome grain.
+- `NOTES.md` — exact prompts and grading details.
+- `grade.py` — reproducible grading script.
+
+Both horizons remain centered for a 4:1 hero crop.
