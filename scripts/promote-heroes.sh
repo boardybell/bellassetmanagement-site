@@ -25,6 +25,6 @@ pick 13-hero-09-granite   1 navy hero-09-granite   16:9 0.5,0.5 --lift 0.06
 pick 14-hero-10-arcade    1 navy hero-10-arcade    16:9
 pick 05-hero-04-timber    2 warm sect-04-beams     4:5  0.3,0.45
 # Iteration 11, Portico (Greek Revival town-house vocabulary)
-pick 24-hero-11-house    2 navy hero-11-portico   16:9 0.5,0.5 # matched to reference photos
+pick 30-hero-11-house-door 1 navy hero-11-portico 16:9 0.5,0.5 # single-leaf front door (gpt-6-astra, max)
 pick 26-detail-11-capital 1 warm plate-11-capital  4:5  0.5,0.4
-pick 29-detail-11-door-scale 2 warm plate-11-entry 4:5 0.5,0.5 # real door; brass knocker and Yale 2531 pull at true scale 
+pick 31-detail-11-door-front 1 warm plate-11-entry 4:5 0.5,0.5 # real door; Yale 2531 seen straight on, true scale (gpt-6-astra, max)

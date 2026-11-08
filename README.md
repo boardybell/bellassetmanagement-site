@@ -38,7 +38,8 @@ All copy lives in `src/content/site.ts`. Iterations read from it, so a wording c
 
 ## Assets
 
-- `codex-briefs/` every brief sent to Codex, numbered. Run one with `scripts/codex-run.sh codex-briefs/NN-slug.md`; output lands in `assets/inbox/NN-slug/` (the Codex CLI ships inside ChatGPT.app).
+- `codex-briefs/` every brief sent to Codex, numbered. Run one with `CODEX_MODEL=gpt-6-astra CODEX_EFFORT=max scripts/codex-run.sh codex-briefs/NN-slug.md` (or `codex-run-refs.sh` to attach every image in the brief's `_ref/`); output lands in `assets/inbox/NN-slug/`. The Codex CLI ships inside ChatGPT.app; its own default is a lighter model at low reasoning, so always set the two variables. Reference photos of private property stay in gitignored `_ref/` folders.
+- The built-in image tool returns about 1.6 megapixels regardless of the size requested. Larger output (up to 2160x3840) needs the OpenAI Images API and an API key.
 - Review every image before promotion: dimensions, palette, no people, no text, clean edges.
 - `node scripts/promote-asset.mjs assets/inbox/.../graded-1.png <name> --aspect 16:9` crops and resizes into `src/assets/img/`. Astro `<Picture>` emits AVIF, WebP and JPEG at 640/1024/1600/2400 with intrinsic dimensions.
 - `node scripts/make-icons.mjs <monogram.svg>` writes the favicon set; `node scripts/make-share-card.mjs <wordmark-cream.svg>` writes the 1200x630 share card.
