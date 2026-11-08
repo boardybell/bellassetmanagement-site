@@ -1,0 +1,34 @@
+---
+// Sales proposals page, rendered inside each design's colors (the page imports its iteration CSS).
+// Text is Bond's, verbatim, from src/content/site.ts.
+import Base from '../layouts/Base.astro';
+import Wordmark from './Wordmark.astro';
+import Legal from './Legal.astro';
+import { company, contact, proposals } from '../content/site';
+import { url } from '../lib/url';
+interface Props { n?: string; cls?: string; dark?: boolean }
+const { n, cls = '', dark = false } = Astro.props;
+const home = url(n ? `/iterations/${n}/` : '/');
+---
+<Base title={`${proposals.title} · ${company.name}`} description={proposals.description} noindex={!!n} class={`${cls} doc-page${dark ? ' doc-dark' : ''}`} themeColor={dark ? '#16233B' : '#FDF6EC'}>
+  <div data-ground={dark ? 'dark' : undefined}>
+    <header class="doc-head"><a href={home} class="doc-mark"><Wordmark tone={dark ? 'cream' : 'black'} width={240} alt={`${company.name} home`} /></a></header>
+    <main id="main" class="doc">
+      <h1>{proposals.title}</h1>
+      <p class="doc-lede">{proposals.intro}</p>
+      <p class="doc-notice"><strong>{proposals.notice}</strong></p>
+      <p>{proposals.lead}</p>
+      {proposals.sections.map((sec) => (
+        <section>
+          <h2>{sec.heading}</h2>
+          {sec.body.map((p) => <p>{p}</p>)}
+        </section>
+      ))}
+      <section class="doc-address">
+        <h2>{proposals.addressHeading}</h2>
+        <address>{company.name}<br />{contact.addressLines[0]}<br />{contact.addressLines[1]}</address>
+      </section>
+    </main>
+    <footer class="doc-foot"><Legal class="legal" /></footer>
+  </div>
+</Base>

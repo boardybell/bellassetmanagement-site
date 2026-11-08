@@ -5,7 +5,7 @@ import Photo from '../../../components/Photo.astro';
 import Menu from '../../../components/Menu.astro';
 import Legal from '../../../components/Legal.astro';
 import Holdings from '../../../components/content/Holdings.astro';
-import Principal from '../../../components/content/Principal.astro';
+import People from '../../../components/content/People.astro';
 import Contact from '../../../components/content/Contact.astro';
 import hero from '../../../assets/img/hero-11-portico.jpg';
 import capital from '../../../assets/img/plate-11-capital.jpg';
@@ -21,7 +21,7 @@ import '../../../iterations/11/style.css';
       <Menu panel="i11-nav" class="menu-btn" />
       <nav class="nav" id="i11-nav" aria-label="Primary">
         <ul class="left"><li><a href="#company">Company</a></li><li><a href="#holdings">Holdings</a></li></ul>
-        <ul class="right"><li><a href="#principal">Principal</a></li><li><a href="#contact">Contact</a></li></ul>
+        <ul class="right"><li><a href="#people">People</a></li><li><a href="#contact">Contact</a></li></ul>
       </nav>
     </div>
     <div class="hero-copy">
@@ -44,9 +44,9 @@ import '../../../iterations/11/style.css';
       <div class="entab"><div class="entab-frieze"><span class="num">II</span><h2 id="h-holdings">Holdings</h2></div></div>
       <div class="bays"><Holdings level={3} /></div>
     </section>
-    <section id="principal" aria-labelledby="h-principal">
-      <div class="entab"><div class="entab-frieze"><span class="num">III</span><h2 id="h-principal">Principal</h2></div></div>
-      <div class="principal"><Principal level={3} portraitWidth={272} /></div>
+    <section id="people" aria-labelledby="h-people">
+      <div class="entab"><div class="entab-frieze"><span class="num">III</span><h2 id="h-people">People</h2></div></div>
+      <div class="principal"><People level={3} portraitWidth={272} /></div>
     </section>
     <section id="contact" aria-labelledby="h-contact">
       <div class="entab"><div class="entab-frieze"><span class="num">IV</span><h2 id="h-contact">Contact</h2></div></div>

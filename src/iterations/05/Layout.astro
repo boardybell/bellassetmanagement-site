@@ -8,7 +8,7 @@ import { url } from '../../lib/url';
 import './style.css';
 interface Props { title: string; current: string; description?: string; heading?: string; eyebrow?: string }
 const { title, current, description, heading, eyebrow } = Astro.props;
-const links = [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }, { href: 'contact/', label: 'Contact' }];
+const links = [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'people/', label: 'People' }, { href: 'contact/', label: 'Contact' }];
 const home = current === '';
 ---
 <Base title={title} description={description} noindex class="i05">

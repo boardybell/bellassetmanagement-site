@@ -1,0 +1,8 @@
+# Exact prompt used for both variants
+
+Use case: precise-object-edit.
+Edit target: Image 1, _ref/a-current.png. Reference for knocker geometry only: Image 2, _ref/b-knocker.png.
+Create one portrait 1024x1536 variant. Replace only the existing dark ring door knocker at the same position on the door's center stile with a faithful rendition of the owner's real knocker from Image 2. The entire new knocker should be about as wide as the center stile plus a little, approximately 50 pixels wide and 58 pixels tall in this full image, centered around the existing knocker location.
+Knocker form: round backplate at the top with a ball-shaped pivot on a short horizontal bar; from the bar a frame drops on each side into two curved horn shapes with small outward spurs; the striking ring below is formed by two curled horns that meet at the bottom at a ball-shaped striker over a small round strike plate. Preserve this distinctive silhouette and construction.
+Material: weathered BRASS, warm muted brass tones, darker brown-olive patina in recesses, soft worn highlights on raised edges. Clearly brass, never black or iron, never shiny polished gold. Render naturally at the scale and perspective of the original door with matching light and subtle contact shadows. Do not paste or copy the reference photograph into the output.
+Strict invariants: keep everything else exactly as in Image 1, including the door and all panel shapes, the brass thumb-latch pull on the left, sidelights and reflections, columns, lantern, siding, shutters, brick, mat, framing, camera, exposure, color and light. No grading. Change no other pixels or objects outside the knocker area. No people, text, house numbers, mailbox, watermark or added objects.

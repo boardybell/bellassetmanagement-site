@@ -8,3 +8,6 @@ qa-report-full.log
 assets/inbox/**/_ref/*.ttf
 qa-pass1.log
 assets/inbox/2[4-6]-*/_ref/
+assets/inbox/27-*/_ref/b-*
+assets/inbox/27-*/_ref/c-*
+assets/inbox/28-*/_ref/b-*

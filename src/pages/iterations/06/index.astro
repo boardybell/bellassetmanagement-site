@@ -5,7 +5,7 @@ import Photo from '../../../components/Photo.astro';
 import Menu from '../../../components/Menu.astro';
 import Legal from '../../../components/Legal.astro';
 import Holdings from '../../../components/content/Holdings.astro';
-import Principal from '../../../components/content/Principal.astro';
+import People from '../../../components/content/People.astro';
 import Contact from '../../../components/content/Contact.astro';
 import a from '../../../assets/img/seq-06a-threshold.jpg';
 import b from '../../../assets/img/seq-06b-fence.jpg';
@@ -36,7 +36,7 @@ const seq = [
         <nav class="nav" id="i06-nav" aria-label="Primary">
           <ul>
             <li><a href="#holdings">Holdings</a></li>
-            <li><a href="#principal">Principal</a></li>
+            <li><a href="#people">People</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -52,11 +52,11 @@ const seq = [
           <h2 id="h-holdings" data-reveal>Holdings</h2>
           <div class="holdings"><Holdings level={3} /></div>
         </section>
-        <section class="step" id="principal" data-step="principal" aria-labelledby="h-principal">
+        <section class="step" id="people" data-step="principal" aria-labelledby="h-people">
           <div class="inline"><Photo src={c} alt="" sizes="100vw" widths={[640, 1024]} /></div>
           <p class="step-num meta">II</p>
-          <h2 id="h-principal" data-reveal>Principal</h2>
-          <div class="principal"><Principal level={3} portraitWidth={160} /></div>
+          <h2 id="h-people" data-reveal>People</h2>
+          <div class="principal"><People level={3} portraitWidth={160} /></div>
         </section>
         <section class="step" id="contact" data-step="contact" aria-labelledby="h-contact">
           <div class="inline"><Photo src={d} alt="" sizes="100vw" widths={[640, 1024]} /></div>

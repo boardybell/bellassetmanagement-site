@@ -1,0 +1,8 @@
+---
+import Layout from '../../../../iterations/05/Layout.astro';
+import People from '../../../../components/content/People.astro';
+import { company } from '../../../../content/site';
+---
+<Layout title={`People · ${company.name}`} current="people/" heading="People" description="Bond Bell, principal, and Shirley Lau Scott, administrator, of Bell Asset Management.">
+  <People level={2} portraitWidth={288} />
+</Layout>

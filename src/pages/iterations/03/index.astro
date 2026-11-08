@@ -5,7 +5,7 @@ import Photo from '../../../components/Photo.astro';
 import Menu from '../../../components/Menu.astro';
 import Legal from '../../../components/Legal.astro';
 import Holdings from '../../../components/content/Holdings.astro';
-import Principal from '../../../components/content/Principal.astro';
+import People from '../../../components/content/People.astro';
 import Contact from '../../../components/content/Contact.astro';
 import plate from '../../../assets/img/plate-03-stair.jpg';
 import { company } from '../../../content/site';
@@ -18,7 +18,7 @@ import '../../../iterations/03/style.css';
     <nav class="nav" id="i03-nav" aria-label="Primary">
       <ul>
         <li><a href="#holdings">Holdings</a></li>
-        <li><a href="#principal">Principal</a></li>
+        <li><a href="#people">People</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -39,9 +39,9 @@ import '../../../iterations/03/style.css';
       <div class="ledger"><Holdings level={3} /></div>
     </section>
 
-    <section class="sect" id="principal" aria-labelledby="h-principal">
-      <div><p class="sect-num meta">II</p><h2 id="h-principal">Principal</h2></div>
-      <div class="principal"><Principal level={3} portraitWidth={208} /></div>
+    <section class="sect" id="people" aria-labelledby="h-people">
+      <div><p class="sect-num meta">II</p><h2 id="h-people">People</h2></div>
+      <div class="principal"><People level={3} portraitWidth={208} /></div>
     </section>
 
     <section class="sect" id="contact" aria-labelledby="h-contact">

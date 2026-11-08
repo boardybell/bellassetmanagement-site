@@ -5,7 +5,7 @@ import Photo from '../../../components/Photo.astro';
 import Menu from '../../../components/Menu.astro';
 import Legal from '../../../components/Legal.astro';
 import Holdings from '../../../components/content/Holdings.astro';
-import Principal from '../../../components/content/Principal.astro';
+import People from '../../../components/content/People.astro';
 import Contact from '../../../components/content/Contact.astro';
 import band from '../../../assets/img/band-08-horizon.jpg';
 import { company } from '../../../content/site';
@@ -20,7 +20,7 @@ import '../../../iterations/08/style.css';
         <nav class="nav" id="i08-nav" aria-label="Primary">
           <ul>
             <li><a href="#holdings">Holdings</a></li>
-            <li><a href="#principal">Principal</a></li>
+            <li><a href="#people">People</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -39,9 +39,9 @@ import '../../../iterations/08/style.css';
         <p class="row-label meta">01</p>
         <div><h2 id="h-holdings" data-reveal>Holdings</h2><div class="ledger mt"><Holdings level={3} /></div></div>
       </section>
-      <section class="row" id="principal" aria-labelledby="h-principal">
+      <section class="row" id="people" aria-labelledby="h-people">
         <p class="row-label meta">02</p>
-        <div><h2 id="h-principal" data-reveal>Principal</h2><div class="principal mt"><Principal level={3} portraitWidth={176} /></div></div>
+        <div><h2 id="h-people" data-reveal>People</h2><div class="principal mt"><People level={3} portraitWidth={176} /></div></div>
       </section>
       <section class="row" id="contact" aria-labelledby="h-contact">
         <p class="row-label meta">03</p>

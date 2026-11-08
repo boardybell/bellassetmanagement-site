@@ -1,0 +1,24 @@
+---
+// People from src/content/site.ts, each as a portrait + text pair with the classes iterations
+// already style (principal-portrait, principal-text). Pairs flow into the parent grid one after another.
+import { Image } from 'astro:assets';
+import bond from '../../assets/img/portrait.jpg';
+import shirley from '../../assets/img/portrait-shirley.jpg';
+import { people } from '../../content/site';
+interface Props { level?: 2 | 3 | 4; portraitWidth?: number; reveal?: boolean }
+const { level = 3, portraitWidth = 360, reveal = true } = Astro.props;
+const H = `h${level}`;
+const portraits = { bond, shirley } as const;
+---
+{people.map((p) => (
+  <>
+    <figure class={`principal-portrait person-${p.id}`} data-reveal={reveal ? '' : undefined}>
+      <Image src={portraits[p.id as keyof typeof portraits]} alt={p.portraitAlt} widths={[portraitWidth, portraitWidth * 2]} sizes={`(min-width: 768px) ${portraitWidth}px, 80vw`} formats={['avif', 'webp']} loading="lazy" decoding="async" />
+    </figure>
+    <div class={`principal-text person-${p.id}`} data-reveal={reveal ? '' : undefined}>
+      <H class="principal-name">{p.name}</H>
+      <p class="principal-title meta">{p.title}</p>
+      <div class="principal-bio">{p.bio.map((l) => <p data-entity={l.entity}>{l.text}</p>)}</div>
+    </div>
+  </>
+))}

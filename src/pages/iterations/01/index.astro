@@ -5,7 +5,7 @@ import Photo from '../../../components/Photo.astro';
 import Menu from '../../../components/Menu.astro';
 import Legal from '../../../components/Legal.astro';
 import Holdings from '../../../components/content/Holdings.astro';
-import Principal from '../../../components/content/Principal.astro';
+import People from '../../../components/content/People.astro';
 import Contact from '../../../components/content/Contact.astro';
 import hero from '../../../assets/img/hero-01-colonnade.jpg';
 import { company } from '../../../content/site';
@@ -20,7 +20,7 @@ import '../../../iterations/01/style.css';
       <nav class="nav" id="i01-nav" aria-label="Primary">
         <ul>
           <li><a href="#holdings">Holdings</a></li>
-          <li><a href="#principal">Principal</a></li>
+          <li><a href="#people">People</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -39,9 +39,9 @@ import '../../../iterations/01/style.css';
 
     <div class="rule" aria-hidden="true"><span></span></div>
 
-    <section class="wide" id="principal" aria-labelledby="h-principal">
-      <h2 id="h-principal" data-reveal>Principal</h2>
-      <div class="principal"><Principal level={3} portraitWidth={288} /></div>
+    <section class="wide" id="people" aria-labelledby="h-people">
+      <h2 id="h-people" data-reveal>People</h2>
+      <div class="principal"><People level={3} portraitWidth={288} /></div>
     </section>
 
     <div class="rule" aria-hidden="true"><span></span></div>

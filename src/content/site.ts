@@ -56,31 +56,83 @@ export const holdings: Holding[] = [
     id: 'assets',
     category: 'Other holdings',
     name: 'Real estate and capital assets',
-    body: 'Bell Asset Management also holds and manages real estate and capital assets. Correspondence about these holdings can be sent to the company by mail or email.',
+    body: 'Bell Asset Management also holds and manages real estate and capital assets. Correspondence about these holdings can be sent to the company\u2019s office by mail.',
   },
 ];
 
-export const principal = {
-  name: 'Bond Bell',
-  title: 'Principal',
-  // Facts from bondbellandco.com/about/. Role at Bell Asset Management kept separate from the
-  // executive and compliance roles at Bond Bell & Co LLC.
-  bio: [
-    'Bond Bell is the principal of Bell Asset Management and is responsible for its direction.',
-    'He has worked in the securities industry since 2004, at Scott & Stringfellow, ING Financial Partners, Voya Financial Advisors, and the Cetera firms.',
-    'He is also the managing member of Bond Bell & Co LLC, a registered investment adviser headquartered in Fort Wayne, Indiana, where he serves as chief executive and chief compliance officer.',
-    'He holds B.A. degrees in Business and Accounting from Randolph-Macon College and works from Fort Wayne, Indiana, and Jackson, Wyoming.',
-  ],
-  portraitAlt: 'Portrait of Bond Bell',
-};
+// People. Bond Bell's facts are from bondbellandco.com/about/. Shirley Lau Scott: title per Bond
+// (2026-11-07: "admin"); tenure and coordination work from the BB&Co claims log, row 30 (CCO-confirmed
+// 2026-08-06, pronouns she/her). A bio line marked entity: 'bbco' describes the adviser and may use
+// regulated words (qa.mjs exempts it).
+export interface BioLine { text: string; entity?: 'bbco' }
+export interface Person { id: string; name: string; title: string; bio: BioLine[]; portraitAlt: string }
+
+export const people: Person[] = [
+  {
+    id: 'bond',
+    name: 'Bond Bell',
+    title: 'Principal',
+    bio: [
+      { text: 'Bond Bell is the principal of Bell Asset Management and is responsible for its direction.' },
+      { text: 'He has worked in the securities industry since 2004, at Scott & Stringfellow, ING Financial Partners, Voya Financial Advisors, and the Cetera firms.' },
+      { text: 'He is also the managing member of Bond Bell & Co LLC, a registered investment adviser headquartered in Fort Wayne, Indiana, where he serves as chief executive and chief compliance officer.' },
+      { text: 'He holds B.A. degrees in Business and Accounting from Randolph-Macon College and works from Fort Wayne, Indiana, and Jackson, Wyoming.' },
+    ],
+    portraitAlt: 'Portrait of Bond Bell',
+  },
+  {
+    id: 'shirley',
+    name: 'Shirley Lau Scott',
+    title: 'Administrator',
+    bio: [
+      { text: 'Shirley Lau Scott is the administrator of Bell Asset Management. She has worked with Bond Bell for two years.' },
+      { text: 'She also leads client service at Bond Bell & Co LLC, where her work includes coordination with attorneys, accountants, and insurance agents.', entity: 'bbco' },
+    ],
+    portraitAlt: 'Portrait of Shirley Lau Scott',
+  },
+];
 
 export const contact = {
   // "Office": Bond confirmed on 2026-11-07 that this is leased office space.
   addressLabel: 'Office',
   addressLines: ['680 Cache St, Suite 100-10219', 'Jackson, WY 83001-8694'],
-  email: 'contact@bellassetmanagement.com',
-  // Bond's policy (2026-11-07): sales solicitations by letter only.
-  solicitationNote: 'Sales solicitations are accepted by mail only, at the address above.',
+  // No email or phone on the site (Bond, 2026-11-07). Sales solicitations by letter only.
+  proposalsLabel: 'Sales proposals',
+  solicitationNote: 'Sales solicitations are accepted by letter only, sent to the office address.',
+  proposalsLink: 'How to write to us',
+};
+
+// Sales proposals page. Bond's text (2026-11-07), verbatim.
+export const proposals = {
+  title: 'Sales proposals',
+  description: 'How to send Bell Asset Management a sales proposal: a letter sent by U.S. Mail.',
+  intro: 'If you would like to sell us a product or service, take the time to understand our business and explain why your offering belongs here.',
+  notice: 'Thoughtful, handwritten correspondence sent by U.S. Mail may merit attention. Unsolicited sales emails, automated outreach, and cold calls will be dismissed.',
+  lead: 'We value a personal approach because a useful business proposal requires some knowledge of the person and company receiving it. Adding a name to a template tells us very little. A specific observation about our business, followed by a relevant proposal, gives us something to consider.',
+  sections: [
+    { heading: 'Know whom you are approaching', body: [
+      'Learn what the company does. Identify the appropriate person and address your correspondence to them. Make sure the product or service you are offering is relevant to that company\u2019s activities.',
+      'You do not need to manufacture a personal connection or open with flattery. Accurate information and a sensible reason for writing are sufficient.',
+    ] },
+    { heading: 'Explain the proposal plainly', body: [
+      'Tell us what you offer, what it would do for our business, and why you believe we might need it. Where practical, include the price or a useful indication of cost.',
+      'Give us enough information to assess the proposal without requiring a meeting to discover what you are selling. Avoid vague promises about growth, efficiency, or opportunity. Describe the actual product, service, or result.',
+    ] },
+    { heading: 'Make the correspondence personal', body: [
+      'A handwritten letter should reflect individual thought. Refer to something relevant, explain your reasoning, and sign your name.',
+      'The handwriting alone will not make a generic pitch useful. What matters is that you have considered the recipient and written something specifically worth their time. A short, legible letter can accomplish this without an elaborate package or a stack of promotional material.',
+    ] },
+    { heading: 'Respect the recipient\u2019s time', body: [
+      'Keep the initial approach concise. One page will usually provide enough room to introduce yourself and explain a worthwhile proposal.',
+      'State your purpose early. Avoid manufactured urgency, exaggerated claims, and requests for an immediate appointment. A prospective customer should be able to understand your offer and decide whether further discussion would be useful.',
+    ] },
+    { heading: 'Allow us to decide whether to continue', body: [
+      'Include your name and contact information, then allow us to consider the correspondence.',
+      'Sending a letter does not create an obligation to respond, schedule a meeting, or accept a follow-up call. Please do not follow it with an email sequence, repeated telephone calls, or unsolicited calendar invitations.',
+      'If we would like to discuss your proposal, we will contact you.',
+    ] },
+  ],
+  addressHeading: 'Address letters to',
 };
 
 // Not changed in the copy revision: a new date would imply a review that has not happened.

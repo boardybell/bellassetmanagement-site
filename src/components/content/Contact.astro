@@ -1,17 +1,22 @@
 ---
+// Contact: the office address, and the mail-only rule for sales proposals with a link to the
+// proposals page of the current design (or /proposals/ once a design is promoted to the root).
+// No email or phone (Bond, 2026-11-07).
 import { contact } from '../../content/site';
+import { url } from '../../lib/url';
 interface Props { reveal?: boolean }
 const { reveal = true } = Astro.props;
-const [user, domain] = contact.email.split('@');
 // Keep hyphenated numbers (suite, ZIP+4) whole: a line may wrap at spaces, never inside a number.
 const parts = (line: string) => line.split(/(\S+-\S+)/).filter(Boolean);
+const m = Astro.url.pathname.match(/^(.*?\/iterations\/\d\d\/)/);
+const proposalsHref = m ? `${m[1]}proposals/` : url('/proposals/');
 ---
 <div class="contact-item" data-reveal={reveal ? '' : undefined}>
   <p class="contact-label meta">{contact.addressLabel}</p>
   <address class="contact-address">{contact.addressLines.map((l) => <span>{parts(l).map((t) => /-/.test(t) ? <span class="nowrap">{t}</span> : t)}</span>)}</address>
-  <p class="contact-note">{contact.solicitationNote}</p>
 </div>
 <div class="contact-item" data-reveal={reveal ? '' : undefined}>
-  <p class="contact-label meta">Email</p>
-  <p class="contact-email"><a href={`mailto:${contact.email}`}>{user}@<wbr />{domain}</a></p>
+  <p class="contact-label meta">{contact.proposalsLabel}</p>
+  <p class="contact-note">{contact.solicitationNote}</p>
+  <p class="contact-more"><a href={proposalsHref}>{contact.proposalsLink}</a></p>
 </div>

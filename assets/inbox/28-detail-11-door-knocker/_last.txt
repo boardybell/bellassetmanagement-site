@@ -1,0 +1,5 @@
+Saved both built-in imagegen variants at 1024x1536, without grading:
+
+- [raw-1.png](raw-1.png)
+- [raw-2.png](raw-2.png)
+- [NOTES.md](NOTES.md) with the exact prompt used.

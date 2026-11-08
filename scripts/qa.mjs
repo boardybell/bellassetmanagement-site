@@ -84,8 +84,8 @@ for (const p of pages) {
 
   // Retired positioning (owner's copy revision, 2026-11-07). Scans everything, footer included.
   // "Bell Family Office" is a proper name and is not matched.
-  const RETIRED = [/Bell family's/i, /family's own/i, /family's (operating|enterprises|businesses)/i, /privately held holding/i, /holds nothing/i, /sells nothing/i, /this site exists/i, /operating companies/i, /does not lead anywhere/i];
-  const stale = RETIRED.filter((r) => r.test(textOf(html) + ' ' + attrs(html))).map(String);
+  const RETIRED = [/Bell family's/i, /family's own/i, /family's (operating|enterprises|businesses)/i, /privately held holding/i, /holds nothing/i, /sells nothing/i, /this site exists/i, /operating companies/i, /does not lead anywhere/i, /contact@bellassetmanagement/i, /mailto:/i];
+  const stale = RETIRED.filter((r) => r.test(textOf(html) + ' ' + attrs(html)) || (/mailto/.test(String(r)) && r.test(html))).map(String);
   record(name, 'no retired positioning', stale.length === 0, stale.join(' '));
 
   if (PROD) record(name, 'no [CONFIRM] placeholders', !/\[CONFIRM/.test(html), '');

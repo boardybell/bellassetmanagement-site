@@ -4,12 +4,12 @@ import Base from '../../layouts/Base.astro';
 import Wordmark from '../../components/Wordmark.astro';
 import Menu from '../../components/Menu.astro';
 import Legal from '../../components/Legal.astro';
-import { company, contact } from '../../content/site';
+import { company } from '../../content/site';
 import { url } from '../../lib/url';
 import './style.css';
 interface Props { title: string; current: string; description?: string }
 const { title, current, description } = Astro.props;
-const links = [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }];
+const links = [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'people/', label: 'People' }];
 const home = current === '';
 ---
 <Base title={title} description={description} noindex class="i02">
@@ -28,7 +28,6 @@ const home = current === '';
       </nav>
       <div class="rail-foot">
         <p class="meta">{company.city}</p>
-        <p class="rail-email"><a href={`mailto:${contact.email}`}>{contact.email.split('@')[0]}@<wbr />{contact.email.split('@')[1]}</a></p>
       </div>
     </header>
     <div class="content">
