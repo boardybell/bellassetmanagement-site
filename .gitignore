@@ -4,3 +4,5 @@ dist/
 qa-report/
 .DS_Store
 assets/inbox/**/_run*.log
+qa-report-full.log
+assets/inbox/**/_ref/*.ttf
