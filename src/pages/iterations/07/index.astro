@@ -1,0 +1,61 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Wordmark from '../../../components/Wordmark.astro';
+import Photo from '../../../components/Photo.astro';
+import Menu from '../../../components/Menu.astro';
+import Legal from '../../../components/Legal.astro';
+import Holdings from '../../../components/content/Holdings.astro';
+import Principal from '../../../components/content/Principal.astro';
+import Contact from '../../../components/content/Contact.astro';
+import door from '../../../assets/img/plate-07-door.jpg';
+import { company, statement } from '../../../content/site';
+import { iterations } from '../../../iterations/registry';
+import '../../../iterations/07/style.css';
+---
+<Base title={company.name} noindex class="i07">
+  <header class="wrap top">
+    <a class="home" href="#main"><Wordmark width={230} alt="Bell Asset Management, top of page" /></a>
+    <Menu panel="i07-nav" class="menu-btn" />
+    <nav class="nav" id="i07-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#holdings">Holdings</a></li>
+        <li><a href="#principal">Principal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="h-company">
+      <h1 id="h-company" data-reveal>Bell Asset Management</h1>
+      <p class="thesis" data-reveal>{iterations[6].thesis}</p>
+      <div class="hero-foot" data-reveal>
+        <p class="descriptor meta">{company.descriptor}</p>
+      </div>
+    </section>
+    <section class="wrap statement-row" aria-label="Statement">
+      <figure class="accent" data-reveal>
+        <Photo src={door} alt="" sizes="(min-width: 860px) 18rem, 12rem" widths={[400, 640]} />
+        <figcaption>Bronze and oak</figcaption>
+      </figure>
+      <p class="statement" data-reveal>{statement}</p>
+    </section>
+    <section class="wrap sect" id="holdings" aria-labelledby="h-holdings">
+      <h2 id="h-holdings" data-reveal>Holdings</h2>
+      <div class="holdings"><Holdings level={3} /></div>
+    </section>
+    <section class="wrap sect" id="principal" aria-labelledby="h-principal">
+      <h2 id="h-principal" data-reveal>Principal</h2>
+      <div class="principal"><Principal level={3} portraitWidth={120} /></div>
+    </section>
+    <section class="wrap sect" id="contact" aria-labelledby="h-contact">
+      <h2 id="h-contact" data-reveal>Contact</h2>
+      <div class="contact"><Contact /></div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <div class="foot">
+      <Wordmark width={200} alt="" eager={false} />
+      <Legal class="legal" />
+    </div>
+  </footer>
+</Base>

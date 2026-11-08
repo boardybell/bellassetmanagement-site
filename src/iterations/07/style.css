@@ -1,0 +1,56 @@
+/* Iteration 07, Typographic: Measure. Big type, rules, whitespace, one accent image. */
+.i07{--max:88rem}
+.i07 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.i07 .top{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-top:2rem;padding-bottom:2rem}
+.i07 .top a.home{line-height:0}
+.i07 .top img{width:clamp(180px,16vw,230px);height:auto}
+.i07 .nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.i07 .nav a,.i07 .menu-btn{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:.5rem 0}
+.i07 .nav a:hover{color:var(--gold-ink)}
+.i07 .menu-btn{display:none;background:none;border:1px solid var(--rule);padding:.6rem .9rem;cursor:pointer}
+.i07 .hero{padding-block:clamp(4rem,12vw,11rem) clamp(3rem,7vw,6rem);border-bottom:1px solid var(--ink)}
+.i07 h1{font-size:clamp(1rem,1.3vw,1.125rem);font-family:var(--font-label);font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.i07 .thesis{margin-top:2rem;font-family:var(--font-display);font-size:clamp(2.75rem,8.2vw,8.5rem);line-height:.98;letter-spacing:-.02em;max-width:12ch;text-wrap:balance}
+.i07 .hero-foot{margin-top:clamp(2.5rem,5vw,4rem);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:end}
+.i07 .descriptor,.i07 .holding-place,.i07 .principal-title,.i07 .contact-label,.i07 .label{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.i07 .statement-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(2rem,6vw,6rem);padding-block:clamp(4rem,9vw,8rem);border-bottom:1px solid var(--rule)}
+.i07 .statement{font-family:var(--font-display);font-size:clamp(1.5rem,2.6vw,2.4rem);line-height:1.35;letter-spacing:-.005em}
+.i07 .accent{margin:0}
+.i07 .accent img{width:100%;height:auto;max-width:18rem}
+.i07 .accent figcaption{margin-top:.9rem;font-family:var(--font-label);font-weight:500;font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--warm)}
+.i07 .sect{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:2rem clamp(2rem,6vw,6rem);padding-block:clamp(4rem,9vw,8rem);border-bottom:1px solid var(--rule)}
+.i07 h2{font-size:clamp(2.5rem,5.6vw,5.5rem);line-height:1;letter-spacing:-.015em}
+.i07 .holdings{display:grid;gap:clamp(3rem,5vw,4.5rem)}
+.i07 .holding{display:grid;gap:.75rem}
+.i07 .holding-name{font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.1}
+.i07 .holding-body{max-width:38rem;font-size:1.125rem;line-height:1.7}
+.i07 a{text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--gold)}
+.i07 a:hover{color:var(--gold-ink)}
+.i07 .principal{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:2rem;align-items:start}
+.i07 .principal-portrait{margin:0}
+.i07 .principal-portrait img{width:100%;height:auto;border:1px solid var(--rule)}
+.i07 .principal-name{font-size:clamp(1.9rem,3.2vw,3rem);line-height:1.1}
+.i07 .principal-title{margin-top:.5rem}
+.i07 .principal-bio{margin-top:1.5rem;display:grid;gap:1rem;max-width:38rem;font-size:1.125rem;line-height:1.7}
+.i07 .contact{display:grid;gap:2.5rem}
+.i07 .contact-address,.i07 .contact-email{font-style:normal;display:grid;margin-top:.75rem;font-family:var(--font-display);font-size:clamp(1.6rem,3.2vw,3rem);line-height:1.4;letter-spacing:-.01em}
+.i07 footer{padding-block:clamp(3rem,6vw,5rem) 3rem}
+.i07 .foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:2rem clamp(2rem,6vw,6rem)}
+.i07 .foot img{width:200px;height:auto}
+.i07 .legal{display:grid;gap:1rem;font-size:.875rem;line-height:1.7}
+@media (max-width:860px){
+  .i07 .statement-row,.i07 .sect,.i07 .foot,.i07 .hero-foot{grid-template-columns:1fr}
+  .i07 .accent{order:2}
+  .i07 .accent img{max-width:12rem}
+}
+@media (max-width:640px){
+  .i07 .top{flex-wrap:wrap;padding-top:1.25rem;padding-bottom:1.25rem}
+  .i07 .menu-btn{display:block}
+  .i07 .nav{flex-basis:100%;display:none}
+  .i07 .nav[data-open]{display:block}
+  .i07 .nav ul{flex-direction:column;gap:0}
+  .i07 .nav a{display:block;padding:.85rem 0;border-top:1px solid var(--rule)}
+  .i07 .principal{grid-template-columns:1fr;gap:1.25rem}
+  .i07 .principal-portrait{width:6.5rem}
+  .i07 .contact-email{font-size:clamp(1.15rem,5.6vw,1.6rem)}
+}
