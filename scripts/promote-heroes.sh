@@ -22,3 +22,4 @@ pick 11-hero-07-door      1 warm plate-07-door     4:5
 pick 12-hero-08-horizon   1 navy band-08-horizon   4:1
 pick 13-hero-09-granite   1 navy hero-09-granite   16:9 0.5,0.5 --lift 0.06
 pick 14-hero-10-arcade    1 navy hero-10-arcade    16:9
+pick 05-hero-04-timber    2 warm sect-04-beams     4:5  0.3,0.45

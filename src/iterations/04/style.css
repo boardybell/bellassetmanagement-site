@@ -1,0 +1,64 @@
+/* Iteration 04, Architectural: Timber. Strict 12-column grid, image-led sections, gold hairline captions. */
+.i04{--max:84rem}
+.i04 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(1rem,2.2vw,2rem);max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.i04 .top{padding-top:1.75rem;padding-bottom:1.75rem;align-items:center}
+.i04 .top h1{grid-column:1 / span 5;margin:0;line-height:0}
+.i04 .top h1 img{width:clamp(200px,20vw,280px);height:auto}
+.i04 .nav{grid-column:6 / -1;justify-self:end}
+.i04 .nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.i04 .nav a,.i04 .menu-btn{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:.5rem 0}
+.i04 .nav a:hover{color:var(--gold-ink)}
+.i04 .menu-btn{display:none;grid-column:-2 / -1;justify-self:end;background:none;border:1px solid var(--rule);padding:.6rem .9rem;cursor:pointer}
+.i04 .hero-fig{grid-column:1 / -1;margin:0}
+.i04 .hero-img{width:100%;height:auto;aspect-ratio:16/8;object-fit:cover}
+.i04 figcaption,.i04 .cap{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;margin-top:1rem;font-family:var(--font-label);font-weight:500;font-size:.6875rem;letter-spacing:.16em;text-transform:uppercase;color:var(--warm)}
+.i04 figcaption::after{content:"";height:1px;background:var(--gold);order:2}
+.i04 figcaption span{order:1}
+.i04 .intro{margin-top:clamp(3rem,6vw,5rem);row-gap:2rem}
+.i04 .thesis{grid-column:1 / span 6;align-self:start;font-family:var(--font-display);font-size:clamp(2.1rem,4.4vw,4rem);line-height:1.1;text-wrap:balance}
+.i04 .intro-side{grid-column:8 / -1;align-self:start;display:grid;gap:1.25rem;padding-top:.6rem;border-top:1px solid var(--gold)}
+.i04 .descriptor{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);line-height:1.8}
+.i04 .statement{font-size:clamp(1.0625rem,1.3vw,1.1875rem);line-height:1.75}
+.i04 .sect{margin-top:clamp(5rem,10vw,9rem);row-gap:2rem}
+.i04 .sect-head{grid-column:1 / -1;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:baseline;border-top:1px solid var(--gold);padding-top:1.25rem}
+.i04 .sect-head .num{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;color:var(--gold-ink)}
+.i04 h2{font-size:clamp(1.9rem,3.2vw,2.75rem)}
+.i04 .media{grid-column:1 / span 5;margin:0}
+.i04 .media img{width:100%;height:auto}
+.i04 .body{grid-column:7 / -1;display:grid;gap:3rem;align-content:start}
+.i04 .holding{display:grid;gap:.6rem;padding-bottom:2.5rem;border-bottom:1px solid var(--rule)}
+.i04 .holding:last-child{border-bottom:0;padding-bottom:0}
+.i04 .holding-place,.i04 .principal-title,.i04 .contact-label{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.i04 .holding-name{font-size:1.75rem}
+.i04 .holding-body{max-width:36rem}
+.i04 a{text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--gold)}
+.i04 a:hover{color:var(--gold-ink)}
+.i04 .sect--principal .principal-portrait{grid-column:1 / span 4;margin:0;padding:.75rem;background:#fff8ee;border:1px solid var(--rule)}
+.i04 .sect--principal .principal-portrait img{width:100%;height:auto}
+.i04 .sect--principal .principal-text{grid-column:6 / span 6;align-self:center}
+.i04 .principal-name{font-size:2rem}
+.i04 .principal-title{margin-top:.4rem}
+.i04 .principal-bio{margin-top:1.5rem;display:grid;gap:1rem}
+.i04 .contact-item{grid-column:span 6;border-top:1px solid var(--rule);padding-top:1.25rem}
+.i04 .contact-address,.i04 .contact-email{font-style:normal;display:grid;margin-top:.75rem;font-family:var(--font-display);font-size:clamp(1.25rem,2vw,1.6rem);line-height:1.4;font-variant-numeric:lining-nums}
+.i04 footer{margin-top:clamp(5rem,10vw,9rem);background:var(--navy);color:rgba(253,246,236,.86);padding:3.5rem 0 3rem}
+.i04 .foot{row-gap:2rem}
+.i04 .foot-mark{grid-column:1 / span 4}
+.i04 .foot-mark img{width:220px;height:auto}
+.i04 .legal{grid-column:5 / -1;display:grid;gap:1rem;font-size:.875rem;line-height:1.7}
+@media (max-width:900px){
+  .i04 .thesis,.i04 .statement,.i04 .intro-side,.i04 .media,.i04 .body,.i04 .sect--principal .principal-text,.i04 .legal,.i04 .foot-mark{grid-column:1 / -1}
+  .i04 .media{max-width:30rem}
+  .i04 .sect--principal .principal-portrait{grid-column:1 / span 6}
+  .i04 .contact-item{grid-column:1 / -1}
+}
+@media (max-width:700px){
+  .i04 .top h1{grid-column:1 / span 9}
+  .i04 .menu-btn{display:block}
+  .i04 .nav{grid-column:1 / -1;justify-self:stretch;display:none;padding-top:1rem}
+  .i04 .nav[data-open]{display:block}
+  .i04 .nav ul{flex-direction:column;gap:0}
+  .i04 .nav a{display:block;padding:.85rem 0;border-top:1px solid var(--rule)}
+  .i04 .hero-img{aspect-ratio:4/3}
+  .i04 .sect--principal .principal-portrait{grid-column:1 / span 9}
+}

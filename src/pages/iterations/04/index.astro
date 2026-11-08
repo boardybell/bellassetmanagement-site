@@ -1,0 +1,68 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Wordmark from '../../../components/Wordmark.astro';
+import Photo from '../../../components/Photo.astro';
+import Menu from '../../../components/Menu.astro';
+import Legal from '../../../components/Legal.astro';
+import Holdings from '../../../components/content/Holdings.astro';
+import Principal from '../../../components/content/Principal.astro';
+import Contact from '../../../components/content/Contact.astro';
+import hero from '../../../assets/img/hero-04-timber.jpg';
+import beams from '../../../assets/img/sect-04-beams.jpg';
+import { company, statement } from '../../../content/site';
+import { iterations } from '../../../iterations/registry';
+import '../../../iterations/04/style.css';
+---
+<Base title={company.name} noindex class="i04">
+  <header class="grid top">
+    <h1><Wordmark width={280} /></h1>
+    <Menu panel="i04-nav" class="menu-btn" />
+    <nav class="nav" id="i04-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#holdings">Holdings</a></li>
+        <li><a href="#principal">Principal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="grid">
+      <figure class="hero-fig">
+        <Photo src={hero} alt="" priority class="hero-img" sizes="(min-width: 84rem) 84rem, 100vw" />
+        <figcaption><span>Timber and granite · High country</span></figcaption>
+      </figure>
+    </div>
+    <section class="grid intro" aria-label="Statement">
+      <p class="thesis" data-reveal>{iterations[3].thesis}</p>
+      <div class="intro-side" data-reveal>
+        <p class="descriptor meta">{company.descriptor}</p>
+        <p class="statement">{statement}</p>
+      </div>
+    </section>
+
+    <section class="grid sect" id="holdings" aria-labelledby="h-holdings">
+      <div class="sect-head"><span class="num" aria-hidden="true">01</span><h2 id="h-holdings">Holdings</h2></div>
+      <figure class="media" data-reveal>
+        <Photo src={beams} alt="" sizes="(min-width: 900px) 34vw, 30rem" widths={[480, 640, 819]} />
+        <figcaption><span>Beam ends · Dry-laid wall</span></figcaption>
+      </figure>
+      <div class="body"><Holdings level={3} /></div>
+    </section>
+
+    <section class="grid sect sect--principal" id="principal" aria-labelledby="h-principal">
+      <div class="sect-head"><span class="num" aria-hidden="true">02</span><h2 id="h-principal">Principal</h2></div>
+      <Principal level={3} portraitWidth={360} />
+    </section>
+
+    <section class="grid sect" id="contact" aria-labelledby="h-contact">
+      <div class="sect-head"><span class="num" aria-hidden="true">03</span><h2 id="h-contact">Contact</h2></div>
+      <Contact />
+    </section>
+  </main>
+  <footer data-ground="dark">
+    <div class="grid foot">
+      <div class="foot-mark"><Wordmark tone="cream" width={220} alt="" eager={false} /></div>
+      <Legal class="legal" />
+    </div>
+  </footer>
+</Base>

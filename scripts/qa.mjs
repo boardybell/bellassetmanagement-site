@@ -155,7 +155,7 @@ process.on('exit', cleanup);
 {
   const { LinkChecker } = await import('linkinator');
   const checker = new LinkChecker();
-  const start = `${ORIGIN}${BASE}/${only ? only.replace(/^\//, '') + (only.endsWith('/') ? '' : '/') : ''}`;
+  const start = `${ORIGIN}${BASE}/`; // always crawl the whole site from the root
   const r = await checker.check({ path: start, recurse: true, timeout: 15000, linksToSkip: flag('--no-external') ? ['^(?!http://localhost)'] : ['^mailto:', '^https://boardybell\\.github\\.io', '^https://bellassetmanagement\\.com'] /* own canonical/og URLs: checked after deploy */, retry: true });
   const broken = r.links.filter((l) => l.state === 'BROKEN').map((l) => `${l.status} ${l.url} (from ${l.parent})`);
   record('(crawl)', `links resolve (${r.links.length} checked)`, broken.length === 0, broken.slice(0, 5).join(' | '));

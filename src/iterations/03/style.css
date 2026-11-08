@@ -1,0 +1,63 @@
+/* Iteration 03, Ledger: Plate. Letterhead header, typographic hero, inset plate. */
+.i03 .head{padding:2.75rem var(--gutter) 0;display:grid;justify-items:center;gap:1.25rem;text-align:center}
+.i03 .head h1{margin:0;line-height:0}
+.i03 .head h1 img{width:clamp(240px,30vw,380px);height:auto}
+.i03 .nav ul{display:flex;list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.i03 .nav li+li{border-left:1px solid var(--rule)}
+.i03 .nav a,.i03 .menu-btn{display:block;font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:.85rem 1.75rem}
+.i03 .nav a:hover{color:var(--gold-ink)}
+.i03 .menu-btn{display:none;background:none;border:1px solid var(--rule);cursor:pointer;padding:.65rem 1rem}
+.i03 main{padding:0 var(--gutter)}
+.i03 .hero{max-width:76rem;margin:clamp(3.5rem,8vw,7rem) auto 0;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.i03 .kicker,.i03 .holding-place,.i03 .principal-title,.i03 .contact-label,.i03 .caption,.i03 .sect-num{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.i03 .thesis{margin-top:1.5rem;font-family:var(--font-display);font-size:clamp(2.25rem,5.4vw,5rem);line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+.i03 .statement{margin-top:2.25rem;font-size:clamp(1.125rem,1.5vw,1.25rem);line-height:1.75;max-width:36rem}
+.i03 .plate{margin:0;justify-self:end;width:min(100%,25rem)}
+.i03 .plate-frame{padding:.9rem;border:1px solid var(--gold);background:#fff8ee}
+.i03 .plate img{width:100%;height:auto}
+.i03 .caption{margin-top:1rem;display:flex;gap:.75rem;align-items:center;color:var(--warm)}
+.i03 .caption::before{content:"";width:2rem;height:1px;background:var(--gold)}
+.i03 .sect{max-width:76rem;margin:clamp(5rem,10vw,8rem) auto 0;border-top:1px solid var(--ink);padding-top:1.5rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:2rem clamp(2rem,5vw,5rem)}
+.i03 .sect h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-top:.5rem}
+.i03 .ledger{display:grid}
+.i03 .holding{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:.5rem 2.5rem;padding:1.75rem 0;border-bottom:1px solid var(--rule)}
+.i03 .holding:first-child{padding-top:.5rem}
+.i03 .holding-place{grid-column:1;grid-row:2}
+.i03 .holding-name{grid-column:1;grid-row:1;font-size:1.5rem;line-height:1.25}
+.i03 .holding-body{grid-column:2;grid-row:1 / span 2}
+.i03 .holding-link{grid-column:2;margin-top:.5rem}
+.i03 a{text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--gold)}
+.i03 a:hover{color:var(--gold-ink)}
+.i03 .principal{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:clamp(1.75rem,4vw,3.5rem);align-items:start;padding-top:.5rem}
+.i03 .principal-portrait{margin:0;border:1px solid var(--rule);padding:.6rem;background:#fff8ee}
+.i03 .principal-portrait img{width:100%;height:auto}
+.i03 .principal-name{font-size:1.75rem}
+.i03 .principal-title{margin-top:.35rem}
+.i03 .principal-bio{margin-top:1.25rem;display:grid;gap:1rem;max-width:38rem}
+.i03 .contact{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding-top:.5rem}
+.i03 .contact-address{font-style:normal;display:grid;margin-top:.6rem;font-size:1.125rem}
+.i03 .contact-email{margin-top:.6rem;font-size:1.125rem}
+.i03 footer{margin-top:clamp(5rem,10vw,8rem);border-top:1px solid var(--gold);padding:3rem var(--gutter) 3rem}
+.i03 .foot{max-width:76rem;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:2rem clamp(2rem,5vw,5rem);align-items:start}
+.i03 .foot img{width:200px;height:auto}
+.i03 .legal{display:grid;gap:1rem;font-size:.875rem;line-height:1.7;color:var(--ink)}
+@media (max-width:900px){
+  .i03 .hero{grid-template-columns:1fr}
+  .i03 .plate{justify-self:start;width:min(100%,20rem)}
+  .i03 .sect,.i03 .foot{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .i03 .head{grid-template-columns:1fr auto;justify-items:start;align-items:center;padding-top:1.5rem;text-align:left}
+  .i03 .head h1 img{width:200px}
+  .i03 .menu-btn{display:block}
+  .i03 .nav{grid-column:1 / -1;width:100%;display:none}
+  .i03 .nav[data-open]{display:block}
+  .i03 .nav ul{flex-direction:column}
+  .i03 .nav li+li{border-left:0;border-top:1px solid var(--rule)}
+  .i03 .nav a{padding:.9rem 0}
+  .i03 .holding{grid-template-columns:1fr}
+  .i03 .holding-place,.i03 .holding-name,.i03 .holding-body,.i03 .holding-link{grid-column:1;grid-row:auto}
+  .i03 .principal{grid-template-columns:1fr}
+  .i03 .principal-portrait{max-width:13rem}
+  .i03 .contact{grid-template-columns:1fr}
+}
