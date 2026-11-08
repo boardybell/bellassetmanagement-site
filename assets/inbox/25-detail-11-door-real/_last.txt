@@ -1,0 +1,5 @@
+Saved two 1024x1536 variants, without grading or retouching:
+
+- [raw-1.png](raw-1.png)
+- [raw-2.png](raw-2.png)
+- [NOTES.md](NOTES.md) with the exact prompt used.

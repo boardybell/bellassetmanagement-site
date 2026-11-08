@@ -1,0 +1,5 @@
+Saved both unretouched 1536×1024 variants using built-in image generation:
+
+- [raw-1.png](raw-1.png)
+- [raw-2.png](raw-2.png)
+- [NOTES.md](NOTES.md) with exact prompts.

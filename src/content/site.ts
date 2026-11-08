@@ -79,6 +79,8 @@ export const contact = {
   addressLabel: 'Office',
   addressLines: ['680 Cache St, Suite 100-10219', 'Jackson, WY 83001-8694'],
   email: 'contact@bellassetmanagement.com',
+  // Bond's policy (2026-11-07): sales solicitations by letter only.
+  solicitationNote: 'Sales solicitations are accepted by mail only, at the address above.',
 };
 
 // Not changed in the copy revision: a new date would imply a review that has not happened.

@@ -53,7 +53,7 @@
 .i11 .contact-wrap .contact{width:min(100%,52rem)}
 .i11 .contact.bays{text-align:center}
 .i11 .contact .contact-item{padding-block:1rem}
-.i11 .contact-address,.i11 .contact-email{font-style:normal;display:grid;margin-top:.75rem;font-family:var(--font-display);font-size:clamp(1.2rem,1.8vw,1.5rem);line-height:1.4}
+.i11 .contact-address,.i11 .contact-email{font-style:normal;display:grid;margin-top:.75rem;font-family:var(--font-display);font-size:clamp(1.1rem,1.5vw,1.3rem);line-height:1.4}
 .i11 footer{margin-top:clamp(5rem,10vw,8rem);background:var(--navy);color:rgba(253,246,236,.86);padding-block:3rem}
 .i11 .foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:2rem;border-top:1px solid var(--rule-on-dark);padding-top:2rem}
 .i11 .foot img{width:200px;height:auto}

@@ -25,3 +25,6 @@ address,.contact-email{font-variant-numeric:lining-nums}
 /* Practice nested inside its adviser's holding card (shared across iterations). */
 .holding .practice{margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid color-mix(in srgb,currentColor 18%,transparent);display:grid;gap:.5rem}
 .holding .practice-name{font-family:var(--font-display);font-weight:400;font-size:1.25rem;line-height:1.3}
+/* Solicitation note under the office address (shared). Body face, slightly smaller; ink for contrast. */
+.contact-note{margin-top:.75rem;font-family:var(--font-body);font-size:.9375rem;line-height:1.55;font-variant-numeric:normal}
+.nowrap{white-space:nowrap}

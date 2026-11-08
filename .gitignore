@@ -7,3 +7,4 @@ assets/inbox/**/_run*.log
 qa-report-full.log
 assets/inbox/**/_ref/*.ttf
 qa-pass1.log
+assets/inbox/2[4-6]-*/_ref/

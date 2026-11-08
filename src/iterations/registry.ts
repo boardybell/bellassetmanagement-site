@@ -41,6 +41,6 @@ export const iterations: Iteration[] = [
     rationale: 'Three pages, each opening on a navy photograph of a stone arcade that blends into a cream body below. Navigation sits over the photograph.',
     pages: [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }] },
   { n: '11', family: 'Architectural', name: 'Portico',
-    rationale: 'Single page using the forms of a Greek Revival house: a navy photograph of a two-story portico and a symmetrical header with the wordmark between two pairs of links. Each section heading sits in a ruled band, and the holdings are set between vertical rules.',
+    rationale: 'Single page modeled on a Greek Revival house with an Ionic portico: a navy photograph of the house and a symmetrical header with the wordmark between two pairs of links. Each section heading sits in a ruled band, and the holdings are set between vertical rules.',
     pages: [{ href: '', label: 'Home' }] },
 ];
