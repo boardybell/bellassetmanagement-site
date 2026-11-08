@@ -1,0 +1,87 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Wordmark from '../../../components/Wordmark.astro';
+import Photo from '../../../components/Photo.astro';
+import Menu from '../../../components/Menu.astro';
+import Legal from '../../../components/Legal.astro';
+import Holdings from '../../../components/content/Holdings.astro';
+import Principal from '../../../components/content/Principal.astro';
+import Contact from '../../../components/content/Contact.astro';
+import a from '../../../assets/img/seq-06a-threshold.jpg';
+import b from '../../../assets/img/seq-06b-fence.jpg';
+import c from '../../../assets/img/seq-06c-river.jpg';
+import d from '../../../assets/img/seq-06d-barn.jpg';
+import { company, statement } from '../../../content/site';
+import { iterations } from '../../../iterations/registry';
+import '../../../iterations/06/style.css';
+const seq = [
+  { id: 'statement', img: a, cap: 'Threshold' },
+  { id: 'holdings', img: b, cap: 'Fence line, winter' },
+  { id: 'principal', img: c, cap: 'River stones' },
+  { id: 'contact', img: d, cap: 'Gable end' },
+];
+---
+<Base title={company.name} noindex class="i06">
+  <div class="layout">
+    <div class="panel" aria-hidden="true">
+      {seq.map((s, i) => (
+        <div class="layer" data-for={s.id} data-active={i === 0 ? '' : undefined}>
+          <Photo src={s.img} alt="" priority={i === 0} sizes="45vw" widths={[640, 1024]} />
+          <p class="layer-cap">{s.cap}</p>
+        </div>
+      ))}
+    </div>
+    <div class="col">
+      <header class="top">
+        <h1><Wordmark width={270} /></h1>
+        <Menu panel="i06-nav" class="menu-btn" />
+        <nav class="nav" id="i06-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#holdings">Holdings</a></li>
+            <li><a href="#principal">Principal</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="main">
+        <section class="step" data-step="statement" aria-label="Statement">
+          <div class="inline"><Photo src={a} alt="" sizes="100vw" widths={[640, 1024]} /></div>
+          <p class="descriptor meta" data-reveal>{company.descriptor}</p>
+          <p class="thesis" data-reveal>{iterations[5].thesis}</p>
+          <p class="statement" data-reveal>{statement}</p>
+        </section>
+        <section class="step" id="holdings" data-step="holdings" aria-labelledby="h-holdings">
+          <div class="inline"><Photo src={b} alt="" sizes="100vw" widths={[640, 1024]} /></div>
+          <p class="step-num meta">I</p>
+          <h2 id="h-holdings" data-reveal>Holdings</h2>
+          <div class="holdings"><Holdings level={3} /></div>
+        </section>
+        <section class="step" id="principal" data-step="principal" aria-labelledby="h-principal">
+          <div class="inline"><Photo src={c} alt="" sizes="100vw" widths={[640, 1024]} /></div>
+          <p class="step-num meta">II</p>
+          <h2 id="h-principal" data-reveal>Principal</h2>
+          <div class="principal"><Principal level={3} portraitWidth={160} /></div>
+        </section>
+        <section class="step" id="contact" data-step="contact" aria-labelledby="h-contact">
+          <div class="inline"><Photo src={d} alt="" sizes="100vw" widths={[640, 1024]} /></div>
+          <p class="step-num meta">III</p>
+          <h2 id="h-contact" data-reveal>Contact</h2>
+          <div class="contact"><Contact /></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <footer data-ground="dark"><Legal class="legal" /></footer>
+</Base>
+<script>
+  // Switch the sticky image when a section crosses the middle of the viewport. One change per section.
+  const layers = new Map([...document.querySelectorAll<HTMLElement>('.i06 .layer')].map((l) => [l.dataset.for, l]));
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      const id = (e.target as HTMLElement).dataset.step;
+      layers.forEach((l, k) => l.toggleAttribute('data-active', k === id));
+    }
+  }, { rootMargin: '-50% 0px -50% 0px' });
+  document.querySelectorAll('.i06 [data-step]').forEach((s) => io.observe(s));
+</script>

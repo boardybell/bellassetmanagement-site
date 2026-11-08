@@ -10,7 +10,7 @@
 // Requires a fresh build (npm run build, or SITE_MODE=production npm run build).
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, existsSync, rmSync } from 'node:fs';
 import { join, relative, dirname } from 'node:path';
-import { spawn } from 'node:child_process';
+import { spawn, execSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 import { HtmlValidate } from 'html-validate';
@@ -142,13 +142,16 @@ for (const f of ['robots.txt', 'site.webmanifest', 'favicon.svg', 'favicon-32.pn
 }
 
 // ---------- serve ----------
+// Astro 7 preview runs as a background daemon; stop any leftover one so we always serve this dist/.
+const stopPreview = () => { try { execSync('npx astro preview stop', { stdio: 'ignore' }); } catch {} };
+stopPreview();
 const server = spawn('npx', ['astro', 'preview', '--port', String(PORT)], { stdio: ['ignore', 'pipe', 'pipe'], env: process.env });
 await new Promise((res, rej) => {
   const t = setTimeout(() => rej(new Error('preview did not start')), 30000);
   const on = (d) => { if (String(d).includes(String(PORT))) { clearTimeout(t); res(); } };
   server.stdout.on('data', on); server.stderr.on('data', on);
 });
-const cleanup = () => { try { server.kill(); } catch {} };
+const cleanup = () => { try { server.kill(); } catch {} stopPreview(); };
 process.on('exit', cleanup);
 
 // ---------- link crawl ----------
