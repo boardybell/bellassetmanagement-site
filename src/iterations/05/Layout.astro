@@ -1,0 +1,36 @@
+---
+// Iteration 05, Architectural: Lake. Four pages; split-screen hero on Home, split title panel inside.
+import Base from '../../layouts/Base.astro';
+import Wordmark from '../../components/Wordmark.astro';
+import Menu from '../../components/Menu.astro';
+import Legal from '../../components/Legal.astro';
+import { url } from '../../lib/url';
+import './style.css';
+interface Props { title: string; current: string; description?: string; heading?: string; eyebrow?: string }
+const { title, current, description, heading, eyebrow } = Astro.props;
+const links = [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }, { href: 'contact/', label: 'Contact' }];
+const home = current === '';
+---
+<Base title={title} description={description} noindex class="i05">
+  <header class="top">
+    {home ? <h1 class="mark"><Wordmark width={260} /></h1> : <a class="mark" href={url('/iterations/05/')}><Wordmark width={260} alt="Bell Asset Management home" /></a>}
+    <Menu panel="i05-nav" class="menu-btn" />
+    <nav class="nav" id="i05-nav" aria-label="Primary">
+      <ul>{links.map((l) => <li><a href={url(`/iterations/05/${l.href}`)} aria-current={l.href === current ? 'page' : undefined}>{l.label}</a></li>)}</ul>
+    </nav>
+  </header>
+  <main id="main">
+    {home ? <slot /> : (
+      <div class="split">
+        <div class="panel" data-ground="dark">
+          <div class="panel-inner">
+            {eyebrow && <p class="panel-eyebrow meta">{eyebrow}</p>}
+            <h1>{heading}</h1>
+          </div>
+        </div>
+        <div class="pane"><slot /></div>
+      </div>
+    )}
+  </main>
+  <footer class="foot"><Legal class="legal" /></footer>
+</Base>

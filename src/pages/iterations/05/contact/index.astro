@@ -1,0 +1,8 @@
+---
+import Layout from '../../../../iterations/05/Layout.astro';
+import Contact from '../../../../components/content/Contact.astro';
+import { company } from '../../../../content/site';
+---
+<Layout title={`Contact · ${company.name}`} current="contact/" heading="Contact" eyebrow={company.city} description="Office address and email for Bell Asset Management.">
+  <Contact />
+</Layout>

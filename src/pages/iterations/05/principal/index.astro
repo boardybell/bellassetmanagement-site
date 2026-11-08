@@ -1,0 +1,8 @@
+---
+import Layout from '../../../../iterations/05/Layout.astro';
+import Principal from '../../../../components/content/Principal.astro';
+import { company } from '../../../../content/site';
+---
+<Layout title={`Principal · ${company.name}`} current="principal/" heading="Principal" eyebrow="Bond Bell" description="Bond Bell, Principal of Bell Asset Management.">
+  <Principal level={2} portraitWidth={288} />
+</Layout>
