@@ -1,0 +1,7 @@
+Saved two 1024x1536 variants using the built-in image tool:
+
+- [raw-1.png](raw-1.png)
+- [raw-2.png](raw-2.png)
+- [NOTES.md](NOTES.md) with the exact prompt
+
+No grading performed.
