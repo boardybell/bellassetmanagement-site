@@ -1,0 +1,10 @@
+---
+import Layout from '../../../../iterations/10/Layout.astro';
+import Principal from '../../../../components/content/Principal.astro';
+import { company } from '../../../../content/site';
+---
+<Layout title={`Principal · ${company.name}`} current="principal/" description="Bond Bell, Principal of Bell Asset Management.">
+  <div class="pagehead" data-ground="dark"><p class="eyebrow meta">Bond Bell</p><h1>Principal</h1></div>
+  <div class="dissolve" aria-hidden="true"></div>
+  <div class="body"><div class="principal"><Principal level={2} portraitWidth={288} /></div></div>
+</Layout>

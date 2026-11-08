@@ -1,0 +1,10 @@
+---
+import Layout from '../../../iterations/10/Layout.astro';
+import { company } from '../../../content/site';
+import { url } from '../../../lib/url';
+---
+<Layout title={`Page not found · ${company.name}`} current="none">
+  <div class="pagehead" data-ground="dark"><p class="eyebrow meta">404</p><h1>Page not found</h1></div>
+  <div class="dissolve" aria-hidden="true"></div>
+  <div class="body nf"><p>That address does not lead anywhere on this site.</p><p><a href={url('/iterations/10/')}>Go to the home page</a></p></div>
+</Layout>

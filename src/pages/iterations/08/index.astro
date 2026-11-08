@@ -1,0 +1,64 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Wordmark from '../../../components/Wordmark.astro';
+import Photo from '../../../components/Photo.astro';
+import Menu from '../../../components/Menu.astro';
+import Legal from '../../../components/Legal.astro';
+import Holdings from '../../../components/content/Holdings.astro';
+import Principal from '../../../components/content/Principal.astro';
+import Contact from '../../../components/content/Contact.astro';
+import band from '../../../assets/img/band-08-horizon.jpg';
+import { company, statement } from '../../../content/site';
+import { iterations } from '../../../iterations/registry';
+import '../../../iterations/08/style.css';
+---
+<Base title={company.name} noindex class="i08">
+  <header class="run">
+    <div class="wrap">
+      <div class="run-line">
+        <a class="run-name" href="#main">Bell Asset Management</a>
+        <Menu panel="i08-nav" class="menu-btn" />
+        <nav class="nav" id="i08-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#holdings">Holdings</a></li>
+            <li><a href="#principal">Principal</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <span class="run-place">{company.city}</span>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <section class="masthead" aria-label="Bell Asset Management">
+        <h1><Wordmark width={560} /></h1>
+        <p class="descriptor meta" data-reveal>{company.descriptor}</p>
+      </section>
+      <div class="thesis-row"><p class="thesis" data-reveal>{iterations[7].thesis}</p></div>
+      <div class="band"><Photo src={band} alt="" priority sizes="(min-width: 86rem) 82rem, 100vw" /></div>
+      <section class="row" aria-labelledby="h-statement">
+        <p class="row-label meta">01</p>
+        <div><h2 id="h-statement" class="visually-hidden">Statement</h2><p class="statement" data-reveal>{statement}</p></div>
+      </section>
+      <section class="row" id="holdings" aria-labelledby="h-holdings">
+        <p class="row-label meta">02</p>
+        <div><h2 id="h-holdings" data-reveal>Holdings</h2><div class="ledger mt"><Holdings level={3} /></div></div>
+      </section>
+      <section class="row" id="principal" aria-labelledby="h-principal">
+        <p class="row-label meta">03</p>
+        <div><h2 id="h-principal" data-reveal>Principal</h2><div class="principal mt"><Principal level={3} portraitWidth={176} /></div></div>
+      </section>
+      <section class="row" id="contact" aria-labelledby="h-contact">
+        <p class="row-label meta">04</p>
+        <div><h2 id="h-contact" data-reveal>Contact</h2><div class="contact mt"><Contact /></div></div>
+      </section>
+    </div>
+  </main>
+  <footer class="wrap">
+    <div class="foot">
+      <Wordmark width={190} alt="" eager={false} />
+      <Legal class="legal" />
+    </div>
+  </footer>
+</Base>

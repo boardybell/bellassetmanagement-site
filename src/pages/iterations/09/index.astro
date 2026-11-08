@@ -1,0 +1,59 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Wordmark from '../../../components/Wordmark.astro';
+import Photo from '../../../components/Photo.astro';
+import Menu from '../../../components/Menu.astro';
+import Legal from '../../../components/Legal.astro';
+import Holdings from '../../../components/content/Holdings.astro';
+import Principal from '../../../components/content/Principal.astro';
+import Contact from '../../../components/content/Contact.astro';
+import hero from '../../../assets/img/hero-09-granite.jpg';
+import { company, statement } from '../../../content/site';
+import { iterations } from '../../../iterations/registry';
+import '../../../iterations/09/style.css';
+---
+<Base title={company.name} noindex class="i09" themeColor="#16233B">
+  <div data-ground="dark">
+    <header class="wrap top">
+      <span class="run">{company.city}</span>
+      <Menu panel="i09-nav" class="menu-btn" />
+      <nav class="nav" id="i09-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#holdings">Holdings</a></li>
+          <li><a href="#principal">Principal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="wrap">
+        <section class="cover corners" aria-label="Statement">
+          <h1><Wordmark tone="cream" width={520} /></h1>
+          <figure class="plate corners"><Photo src={hero} alt="" priority sizes="(min-width: 78rem) 60rem, 90vw" /></figure>
+          <p class="thesis" data-reveal>{iterations[8].thesis}</p>
+          <p class="descriptor meta" data-reveal>{company.descriptor}</p>
+        </section>
+        <p class="statement" data-reveal>{statement}</p>
+
+        <section class="sect" id="holdings" aria-labelledby="h-holdings">
+          <div class="sect-head corners"><p class="label meta">Section I</p><h2 id="h-holdings" data-reveal>Holdings</h2></div>
+          <div class="holdings"><Holdings level={3} /></div>
+        </section>
+        <section class="sect" id="principal" aria-labelledby="h-principal">
+          <div class="sect-head corners"><p class="label meta">Section II</p><h2 id="h-principal" data-reveal>Principal</h2></div>
+          <div class="principal"><Principal level={3} portraitWidth={272} /></div>
+        </section>
+        <section class="sect" id="contact" aria-labelledby="h-contact">
+          <div class="sect-head corners"><p class="label meta">Section III</p><h2 id="h-contact" data-reveal>Contact</h2></div>
+          <div class="contact"><Contact /></div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="wrap foot">
+        <Wordmark tone="cream" width={200} alt="" eager={false} />
+        <Legal class="legal" />
+      </div>
+    </footer>
+  </div>
+</Base>

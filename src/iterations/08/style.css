@@ -1,0 +1,68 @@
+/* Iteration 08, Typographic: Rule. Horizontal rules are the structure; nav is a running header line. */
+.i08{--max:86rem}
+.i08 .wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.i08 .run{position:sticky;top:0;z-index:10;background:var(--cream)}
+.i08 .run-line{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:3.25rem;border-bottom:1px solid var(--ink)}
+.i08 .run-name,.i08 .nav a,.i08 .menu-btn,.i08 .run-place{font-family:var(--font-label);font-weight:500;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+.i08 .nav ul{display:flex;gap:0;list-style:none;margin:0;padding:0}
+.i08 .nav li+li::before{content:"·";color:var(--gold-ink);padding:0 1rem}
+.i08 .nav a:hover{color:var(--gold-ink)}
+.i08 .run-place{color:var(--warm)}
+.i08 .menu-btn{display:none;background:none;border:1px solid var(--rule);padding:.5rem .8rem;cursor:pointer}
+.i08 .masthead{padding-block:clamp(3.5rem,8vw,7rem) clamp(2.5rem,5vw,4rem);text-align:center;border-bottom:3px double var(--ink)}
+.i08 .masthead h1{margin:0;line-height:0;display:flex;justify-content:center}
+.i08 .masthead h1 img{width:clamp(250px,42vw,560px);height:auto}
+.i08 .descriptor{margin:1.75rem auto 0;max-width:40rem;font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);line-height:1.8}
+.i08 .thesis-row{padding-block:clamp(2.5rem,6vw,5rem);border-bottom:1px solid var(--ink);text-align:center}
+.i08 .thesis{font-family:var(--font-display);font-size:clamp(1.9rem,4.2vw,3.9rem);line-height:1.12;max-width:22ch;margin:0 auto;text-wrap:balance}
+.i08 .band{border-bottom:1px solid var(--ink);padding-block:1rem}
+.i08 .band img{width:100%;height:auto;aspect-ratio:4/1;object-fit:cover}
+.i08 .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:1rem clamp(2rem,5vw,5rem);padding-block:clamp(2.5rem,5vw,4.5rem);border-bottom:1px solid var(--ink)}
+.i08 .row-label{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);padding-top:.5rem}
+.i08 .row h2{font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.1}
+.i08 .statement{font-size:clamp(1.2rem,1.8vw,1.45rem);line-height:1.7;max-width:46rem}
+.i08 .ledger{display:grid}
+.i08 .holding{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.8fr) minmax(0,2fr);gap:.5rem 2rem;padding-block:1.5rem;border-top:1px solid var(--rule)}
+.i08 .holding-name{grid-column:1;grid-row:1;font-size:1.375rem;line-height:1.3}
+.i08 .holding-place{grid-column:2;grid-row:1;font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);padding-top:.45rem}
+.i08 .holding-body{grid-column:3;grid-row:1}
+.i08 .holding-link{grid-column:3;grid-row:2}
+.i08 a{text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:var(--gold)}
+.i08 a:hover{color:var(--gold-ink)}
+.i08 .principal{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:2.5rem;align-items:start;border-top:1px solid var(--rule);padding-top:1.5rem}
+.i08 .principal-portrait{margin:0;border:1px solid var(--rule);padding:.5rem;background:#fff8ee}
+.i08 .principal-portrait img{width:100%;height:auto}
+.i08 .principal-name{font-size:1.625rem}
+.i08 .principal-title,.i08 .contact-label{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.i08 .principal-title{margin-top:.35rem}
+.i08 .principal-bio{margin-top:1.25rem;display:grid;gap:1rem;max-width:42rem}
+.i08 .contact{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
+.i08 .contact-item{padding-top:1.5rem}
+.i08 .contact-item+.contact-item{border-left:1px solid var(--rule);padding-left:2rem}
+.i08 .contact-address,.i08 .contact-email{font-style:normal;display:grid;margin-top:.6rem;font-size:1.1875rem}
+.i08 footer{padding-block:2.5rem 3rem}
+.i08 .foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:1.5rem clamp(2rem,5vw,5rem);border-top:3px double var(--ink);padding-top:2rem}
+.i08 .foot img{width:190px;height:auto}
+.i08 .legal{display:grid;gap:1rem;font-size:.875rem;line-height:1.7}
+@media (max-width:960px){.i08 .run-place{display:none}}
+@media (max-width:860px){
+  .i08 .row,.i08 .foot{grid-template-columns:1fr}
+  .i08 .holding{grid-template-columns:1fr}
+  .i08 .holding-name,.i08 .holding-place,.i08 .holding-body,.i08 .holding-link{grid-column:1;grid-row:auto;padding-top:0}
+}
+@media (max-width:640px){
+  .i08 .run-line{flex-wrap:wrap;padding-block:.5rem}
+  .i08 .menu-btn{display:block}
+  .i08 .nav{flex-basis:100%;display:none}
+  .i08 .nav[data-open]{display:block}
+  .i08 .nav ul{flex-direction:column}
+  .i08 .nav li+li::before{content:none}
+  .i08 .nav a{display:block;padding:.85rem 0;border-top:1px solid var(--rule)}
+  .i08 .band img{aspect-ratio:2/1}
+  .i08 .principal{grid-template-columns:1fr}
+  .i08 .principal-portrait{max-width:10rem}
+  .i08 .contact{grid-template-columns:1fr}
+  .i08 .contact-item+.contact-item{border-left:0;padding-left:0;border-top:1px solid var(--rule);margin-top:1.5rem}
+}
+.i08 .mt{margin-top:2rem}
+.i08 main .row:last-child{border-bottom:0}

@@ -1,0 +1,29 @@
+---
+// Iteration 10, Inverse: Arcade. Navy top that dissolves into a cream body; three pages.
+import Base from '../../layouts/Base.astro';
+import Wordmark from '../../components/Wordmark.astro';
+import Menu from '../../components/Menu.astro';
+import Legal from '../../components/Legal.astro';
+import { url } from '../../lib/url';
+import './style.css';
+interface Props { title: string; current: string; description?: string }
+const { title, current, description } = Astro.props;
+const links = [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }];
+const home = current === '';
+---
+<Base title={title} description={description} noindex class="i10" themeColor="#0D1626">
+  <header class="bar" data-ground="dark">
+    {home ? <h1 class="mark"><Wordmark tone="cream" width={270} /></h1> : <a class="mark" href={url('/iterations/10/')}><Wordmark tone="cream" width={270} alt="Bell Asset Management home" /></a>}
+    <Menu panel="i10-nav" class="menu-btn" />
+    <nav class="nav" id="i10-nav" aria-label="Primary">
+      <ul>{links.map((l) => <li><a href={url(`/iterations/10/${l.href}`)} aria-current={l.href === current ? 'page' : undefined}>{l.label}</a></li>)}</ul>
+    </nav>
+  </header>
+  <main id="main"><slot /></main>
+  <footer class="foot" data-ground="dark">
+    <div class="foot-in">
+      <slot name="footer-extra" />
+      <Legal class="legal" />
+    </div>
+  </footer>
+</Base>
