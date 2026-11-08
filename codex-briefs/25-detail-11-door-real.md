@@ -1,6 +1,6 @@
 # Brief 25: front door, iteration 11 (Portico), from a reference photograph
 
-You are the illustrator. Work ONLY inside the current directory. Reference: `_ref/door.png` (also attached), the house's real front entrance.
+You are the illustrator. Work ONLY inside the current directory. Reference: `_ref/door.png` (also attached), the entrance.
 
 ## Purpose
 Detail plate, PORTRAIT 1024x1536, shown at about 18rem wide.

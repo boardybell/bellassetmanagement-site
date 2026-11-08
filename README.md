@@ -54,8 +54,9 @@ U="U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122
 python -m fontTools.varLib.instancer assets/fonts-original/SourceSerif4-400.woff2 wght=400:500 opsz=18 -o /tmp/ss.ttf
 python -m fontTools.varLib.instancer assets/fonts-original/PlayfairDisplay-400.woff2 wght=400:500 -o /tmp/pf.ttf
 python -m fontTools.subset /tmp/ss.ttf --unicodes="$U" --layout-features='*' --flavor=woff2 --output-file=src/fonts/SourceSerif4-var.woff2
-python -m fontTools.subset /tmp/pf.ttf --unicodes="$U" --layout-features='*' --flavor=woff2 --output-file=src/fonts/PlayfairDisplay-var.woff2
-python -m fontTools.subset assets/fonts-original/IBMPlexSans-500.woff2 --unicodes="$U" --layout-features='*' --flavor=woff2 --output-file=src/fonts/IBMPlexSans-500.woff2
+python -m fontTools.subset /tmp/pf.ttf --unicodes="$U" --layout-features='*' --flavor=woff2 --output-file=src/fonts/BAMDisplay-var.woff2
+python -m fontTools.subset assets/fonts-original/IBMPlexSans-500.woff2 --unicodes="$U" --layout-features='*' --flavor=woff2 --output-file=src/fonts/BAMLabel-500.woff2
+# then rename the name tables of BAMDisplay and BAMLabel (Reserved Font Names; see src/fonts/licenses/README.md)
 node scripts/gen-fonts.mjs
 ```
 

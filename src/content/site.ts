@@ -138,8 +138,7 @@ export const proposals = {
 // Not changed in the copy revision: a new date would imply a review that has not happened.
 export const reviewed = 'November 7, 2026';
 
-// Footer disclosure. The first two sentences are the company description (updated to the owner's
-// positioning). The scope limitation "does not act for outside parties" is kept from the approved
+// Footer disclosure: company description, then the standing disclaimers.
 export const legal = [
   'Bell Asset Management is a private holding company. It holds and manages operating businesses, real estate, and capital assets, and does not act for outside parties. It does not provide investment, legal, tax, or accounting advice, and nothing on this site is an offer to sell or a solicitation of an offer to buy any security or interest. Bond Bell & Co LLC is a separate entity and a registered investment adviser; registration does not imply a certain level of skill or training.',
 ];
