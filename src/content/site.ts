@@ -60,8 +60,8 @@ export const holdings: Holding[] = [
   },
 ];
 
-// People. Bond Bell's facts are from bondbellandco.com/about/. Shirley Lau Scott: title per Bond
-// (2026-11-07: "admin"); tenure and coordination work from the BB&Co claims log, row 30 (CCO-confirmed
+// People. Bond Bell's facts are from bondbellandco.com/about/. Shirley Lau Scott: title Administrator,
+// confirmed by Bond 2026-11-07; tenure and coordination work from the BB&Co claims log, row 30 (CCO-confirmed
 // 2026-08-06, pronouns she/her). A bio line marked entity: 'bbco' describes the adviser and may use
 // regulated words (qa.mjs exempts it).
 export interface BioLine { text: string; entity?: 'bbco' }
