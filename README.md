@@ -44,6 +44,20 @@ All copy lives in `src/content/site.ts`. Iterations read from it, so a wording c
 - `node scripts/make-icons.mjs <monogram.svg>` writes the favicon set; `node scripts/make-share-card.mjs <wordmark-cream.svg>` writes the 1200x630 share card.
 - `node scripts/gen-fonts.mjs` regenerates `src/styles/fonts.css` with metrics-matched fallback faces.
 
+## Fonts
+
+BB&Co ships each serif as two identical variable files (one per weight), so a page downloads it twice. Here each family is one variable file clamped to 400 to 500, subset to Latin (about 80 KB total, down from 330 KB). Rebuild from `assets/fonts-original/`:
+
+```sh
+U="U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-2193,U+2212"
+python -m fontTools.varLib.instancer assets/fonts-original/SourceSerif4-400.woff2 wght=400:500 opsz=18 -o /tmp/ss.ttf
+python -m fontTools.varLib.instancer assets/fonts-original/PlayfairDisplay-400.woff2 wght=400:500 -o /tmp/pf.ttf
+python -m fontTools.subset /tmp/ss.ttf --unicodes="$U" --layout-features='*' --flavor=woff2 --output-file=src/fonts/SourceSerif4-var.woff2
+python -m fontTools.subset /tmp/pf.ttf --unicodes="$U" --layout-features='*' --flavor=woff2 --output-file=src/fonts/PlayfairDisplay-var.woff2
+python -m fontTools.subset assets/fonts-original/IBMPlexSans-500.woff2 --unicodes="$U" --layout-features='*' --flavor=woff2 --output-file=src/fonts/IBMPlexSans-500.woff2
+node scripts/gen-fonts.mjs
+```
+
 ## Deploy
 
 Push to `main`. `.github/workflows/deploy.yml` builds and publishes with `actions/deploy-pages`. Pages source must be set to GitHub Actions.

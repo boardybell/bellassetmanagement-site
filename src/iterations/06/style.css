@@ -39,7 +39,9 @@
 @media (prefers-reduced-motion:reduce){.i06 .layer{transition:none}}
 @media (max-width:900px){
   .i06 .layout{grid-template-columns:1fr}
-  .i06 .panel{display:none}
+  .i06 .panel{position:relative;height:auto;aspect-ratio:4/3}
+  .i06 .layer:not([data-for="statement"]){display:none}
+  .i06 .layer[data-for="statement"]{opacity:1}
   .i06 .inline{display:block;margin:0 0 2rem;aspect-ratio:4/3;overflow:hidden}
   .i06 .inline picture,.i06 .inline img{width:100%;height:100%;object-fit:cover}
   .i06 .step,.i06 .step:first-of-type{min-height:0}

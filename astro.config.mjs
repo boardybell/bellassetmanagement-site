@@ -12,6 +12,8 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'always' },
   compressHTML: true,
+  // Per-format encoder quality (one quality number is wrong across formats: AVIF 72 is far heavier than WebP 72).
+  image: { service: { entrypoint: 'astro/assets/services/sharp', config: { avif: { quality: 50, effort: 6 }, webp: { quality: 74, effort: 5 }, jpeg: { quality: 78, mozjpeg: true } } } },
   devToolbar: { enabled: false },
   // Iterations and the gallery are never in the sitemap. In gallery mode there is nothing indexable.
   integrations: [sitemap({ filter: (page) => production && !page.includes('/iterations/') && !page.includes('/404') })],

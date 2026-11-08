@@ -2,7 +2,7 @@
 
 Usage: fontvenv python scripts/grade.py <navy|warm> in.png out.png [--lift 0.0] [--gamma 1.0]
 Luminance is computed in linear light, shaped by gamma/lift, then mapped through the stops below
-with smooth (smoothstep) interpolation in linear RGB. A 2% monochrome grain prevents banding.
+with smooth (smoothstep) interpolation in linear RGB. A 0.6% monochrome grain prevents banding without defeating AVIF compression.
 """
 import sys
 import numpy as np
@@ -32,7 +32,7 @@ def grade(kind, src, dst, lift=0.0, gamma=1.0):
         t = (L[m] - p0) / (p1 - p0); t = t * t * (3 - 2 * t)
         out[m] = srgb(lin(c0) * (1 - t[:, None]) + lin(c1) * t[:, None])
     rng = np.random.default_rng(7)
-    out = np.clip(out + rng.normal(0, 0.02, L.shape)[..., None] * 0.5, 0, 1)
+    out = np.clip(out + rng.normal(0, 0.006, L.shape)[..., None], 0, 1)
     Image.fromarray((out * 255).round().astype(np.uint8)).save(dst, optimize=True)
     print(f'{kind} {src} -> {dst}')
 

@@ -8,7 +8,7 @@ const w = widths.filter((x) => x <= src.width);
 ---
 <Picture
   src={src} alt={alt} sizes={sizes} widths={w.length ? w : [src.width]}
-  formats={['avif', 'webp']} fallbackFormat="jpg" quality={72}
+  formats={['avif', 'webp']} fallbackFormat="jpg"
   loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async"
   class={cls}
 />

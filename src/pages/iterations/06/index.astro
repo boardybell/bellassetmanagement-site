@@ -26,7 +26,7 @@ const seq = [
     <div class="panel" aria-hidden="true">
       {seq.map((s, i) => (
         <div class="layer" data-for={s.id} data-active={i === 0 ? '' : undefined}>
-          <Photo src={s.img} alt="" priority={i === 0} sizes="45vw" widths={[640, 1024]} />
+          <Photo src={s.img} alt="" priority={i === 0} sizes="(min-width: 900px) 45vw, 100vw" widths={[640, 1024]} />
           <p class="layer-cap">{s.cap}</p>
         </div>
       ))}
@@ -45,7 +45,6 @@ const seq = [
       </header>
       <main id="main">
         <section class="step" data-step="statement" aria-label="Statement">
-          <div class="inline"><Photo src={a} alt="" sizes="100vw" widths={[640, 1024]} /></div>
           <p class="descriptor meta" data-reveal>{company.descriptor}</p>
           <p class="thesis" data-reveal>{iterations[5].thesis}</p>
           <p class="statement" data-reveal>{statement}</p>

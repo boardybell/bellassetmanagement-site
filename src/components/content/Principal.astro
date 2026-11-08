@@ -7,7 +7,7 @@ const { level = 3, portraitWidth = 360, reveal = true, showName = true } = Astro
 const H = `h${level}`;
 ---
 <figure class="principal-portrait" data-reveal={reveal ? '' : undefined}>
-  <Image src={portrait} alt={principal.portraitAlt} widths={[portraitWidth, portraitWidth * 2]} sizes={`(min-width: 768px) ${portraitWidth}px, 80vw`} formats={['avif', 'webp']} quality={78} loading="lazy" decoding="async" />
+  <Image src={portrait} alt={principal.portraitAlt} widths={[portraitWidth, portraitWidth * 2]} sizes={`(min-width: 768px) ${portraitWidth}px, 80vw`} formats={['avif', 'webp']} loading="lazy" decoding="async" />
 </figure>
 <div class="principal-text" data-reveal={reveal ? '' : undefined}>
   {showName && <H class="principal-name">{principal.name}</H>}

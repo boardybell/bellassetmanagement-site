@@ -2,8 +2,8 @@
 // Shared document head for every page: meta, Open Graph, Twitter, canonical, favicons,
 // font preloads, noindex switch, and the reveal script. Iterations supply only the body.
 import '../styles/base.css';
-import playfair400 from '../fonts/PlayfairDisplay-400.woff2?url';
-import serif400 from '../fonts/SourceSerif4-400.woff2?url';
+import playfair400 from '../fonts/PlayfairDisplay-var.woff2?url';
+import serif400 from '../fonts/SourceSerif4-var.woff2?url';
 import plex500 from '../fonts/IBMPlexSans-500.woff2?url';
 import { company } from '../content/site';
 import { url } from '../lib/url';
@@ -73,8 +73,12 @@ const fontMap = { display: playfair400, body: serif400, label: plex500 };
       for (const en of entries) if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
     }, { rootMargin: '0px 0px -5% 0px' });
     els.forEach((e) => io.observe(e));
-    // Safety net: never leave anything hidden.
-    setTimeout(() => els.forEach((e) => e.classList.add('in')), 2500);
+    // Safety net: if the observer ever misses an element that is on screen, reveal it.
+    // Only on-screen elements, so nothing off screen starts fading on a timer.
+    const sweep = () => els.forEach((e) => { if (!e.classList.contains('in') && e.getBoundingClientRect().top < innerHeight) e.classList.add('in'); });
+    setTimeout(sweep, 1200);
+    let raf = 0;
+    addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(sweep); }, { passive: true });
   }
 </script>
 </body>
