@@ -1,0 +1,20 @@
+{
+  "name": "Bell Asset Management",
+  "short_name": "Bell",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FDF6EC",
+  "theme_color": "#16233B",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
