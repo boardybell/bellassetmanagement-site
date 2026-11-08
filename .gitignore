@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.astro/
+qa-report/
+.DS_Store
+assets/inbox/**/_run*.log

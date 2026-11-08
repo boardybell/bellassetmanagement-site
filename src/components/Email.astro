@@ -1,0 +1,5 @@
+---
+import { contact } from '../content/site';
+interface Props { class?: string }
+---
+<a class={Astro.props.class} href={`mailto:${contact.email}`}>{contact.email}</a>

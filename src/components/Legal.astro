@@ -1,0 +1,9 @@
+---
+// Footer legal block. Wording approved by Bond 2026-11-07 (Section 6 draft plus the "holds and oversees only" sentence).
+import { legal, copyright } from '../content/site';
+interface Props { class?: string }
+---
+<div class={Astro.props.class} data-entity="legal">
+  {legal.map((p) => <p>{p}</p>)}
+  <p>{copyright}</p>
+</div>

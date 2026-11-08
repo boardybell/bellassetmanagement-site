@@ -1,0 +1,17 @@
+---
+// Mobile menu disclosure. Pair a toggle (data-menu-toggle, aria-controls) with a panel id.
+// Keyboard: Enter/Space toggles, Escape closes and returns focus. Links close the menu.
+interface Props { panel: string; label?: string; class?: string }
+const { panel, label = 'Menu', class: cls } = Astro.props;
+---
+<button type="button" class={cls} data-menu-toggle aria-controls={panel} aria-expanded="false">{label}</button>
+<script>
+  for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-menu-toggle]')) {
+    const panel = document.getElementById(btn.getAttribute('aria-controls')!);
+    if (!panel) continue;
+    const set = (open: boolean) => { btn.setAttribute('aria-expanded', String(open)); panel.toggleAttribute('data-open', open); document.documentElement.toggleAttribute('data-menu-open', open); };
+    btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); } });
+    panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => set(false)));
+  }
+</script>

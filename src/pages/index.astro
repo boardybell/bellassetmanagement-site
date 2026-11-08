@@ -1,0 +1,14 @@
+---
+// Gallery phase: the root sends visitors to the iteration gallery.
+// After promotion this file becomes the production home page.
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+const target = url('/iterations/');
+---
+<Base title="Bell Asset Management" noindex>
+  <meta slot="head" http-equiv="refresh" content={`0; url=${target}`}>
+  <main id="main" style="padding:4rem var(--gutter)">
+    <h1 style="font-size:2rem">Bell Asset Management</h1>
+    <p style="margin-top:1rem"><a href={target}>Design iterations</a></p>
+  </main>
+</Base>

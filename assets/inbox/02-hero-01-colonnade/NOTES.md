@@ -1,0 +1,22 @@
+# Brief 02: hero 01-colonnade
+
+Built-in image generation; `_ref/bbco-hero.jpg` supplied as an architectural and mood reference for both calls. Originals copied byte-for-byte to `raw-1.png` and `raw-2.png`. All four PNGs are 1536 × 1024.
+
+## Exact prompt — variant 1
+
+Use case: photorealistic-natural. Create one photograph, landscape exactly 1536x1024. Full-bleed hero for a restrained private holding company. Classical limestone colonnade at dusk, low oblique camera angle, natural 50mm lens, photographic realism, no stylization. Follow the supplied reference's sober monumental neoclassical style, close architectural perspective and dark navy mood, but depict a different building and composition: a broad unadorned stone podium/wall fills the LEFT 45% as deep nearly featureless navy shadow; fluted stone columns rise in the RIGHT 55%, receding to the right beneath a plain entablature. Long quiet shadows, cool grazing dusk light on the flutes, restrained texture, convincing solid masonry. Keep the entire left 45% extremely calm and dark for cream headline type, with no visible bright edges or distracting detail. Intentional balanced architectural framing, no awkward edge crops. Deep #0D1626 and #16233B navy shadows, subdued cool stone highlights at most #C9CCD3. No people, body parts, human silhouettes, animals, vehicles, text, letters, numbers, signage, logos, watermarks, flags, modern glass towers. Do not add any typography. Save the generated photograph to the current task directory as raw-1.png if filesystem output is available.
+
+## Exact prompt — variant 2
+
+Use case: photorealistic-natural. Create one photograph, landscape exactly 1536x1024. Full-bleed hero for a restrained private holding company. Classical limestone colonnade at dusk, low oblique camera angle, natural 40mm lens, photographic realism, no stylization. Follow the supplied reference's sober monumental neoclassical style, close architectural perspective and dark navy mood, but depict a different building and composition: a broad recessed unadorned stone wall fills the LEFT 45% as deep nearly featureless navy shadow; a row of slimmer fluted Doric stone columns rises in the RIGHT 55%, receding to the right beneath a plain entablature. Long quiet shadows, cool grazing dusk light on the flutes, restrained texture, convincing solid masonry. Keep the entire left 45% extremely calm and dark for cream headline type, with no visible bright edges or distracting detail. Intentional balanced architectural framing, no awkward edge crops. Deep #0D1626 and #16233B navy shadows, subdued cool stone highlights at most #C9CCD3. No people, body parts, human silhouettes, animals, vehicles, text, letters, numbers, signage, logos, watermarks, flags, modern glass towers. Do not add any typography. Save the generated photograph to the current task directory as raw-2.png if filesystem output is available. Variant 2: distinct original building; slightly more distant camera position showing complete capitals and more of the plain entablature, a stronger rightward vanishing point, softer twilight grazing light. Preserve nearly flat shadow throughout the left 45%.
+
+## Grading
+
+Reproduce with `python3 grade.py` from this directory. Pillow reads the untouched RGB originals. Rec.709 luminance (0.2126 R + 0.7152 G + 0.0722 B) drives piecewise RGB interpolation through these tonal anchors: 0 → #0D1626; 0.20 → #16233B; 0.94 → #C9CCD3; 1 → #FDF6EC. Architecture uses luminance × 0.90, keeping these dusk photographs restrained and well below the cream endpoint. No original chroma survives.
+
+The left 45% uses 0.035 + luminance × 0.10 to compress wall detail into nearly flat navy shadow. A smoothstep transition between 45% and 62% blends back into the architectural grade without a visible seam. Fine independent per-pixel monochrome grain is applied as uniform ±0.02 modulation of the scalar tonal coordinate before palette mapping, with deterministic seeds 7201 and 7202. This prevents colored grain or out-of-palette hue shifts. No resizing, cropping, sharpening, or geometry changes. `grade.py` is included for exact reproducibility.
+
+## Visual review
+
+Variant 1 is a closer, more monumental view with broad flutes; variant 2 has slimmer columns, more visible capitals and entablature, and a stronger vanishing point. Both reserve the left side for headline placement. No prohibited subjects or typography were observed. Raw originals and graded exports were checked at their native dimensions.
+

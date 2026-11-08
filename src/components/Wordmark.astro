@@ -1,0 +1,10 @@
+---
+// The chosen wordmark (vector, outlined by Codex). `tone` picks ink-on-cream or cream-on-navy.
+// The lockup is 1487.48 x 177 user units; width/height attributes keep layout stable.
+import black from '../assets/brand/wordmark-black.svg?url';
+import cream from '../assets/brand/wordmark-cream.svg?url';
+interface Props { tone?: 'black' | 'cream'; width?: number; alt?: string; class?: string; eager?: boolean }
+const { tone = 'black', width = 360, alt = 'Bell Asset Management', class: cls, eager = true } = Astro.props;
+const height = Math.round((width * 177) / 1487.48);
+---
+<img class={cls} src={tone === 'cream' ? cream : black} alt={alt} width={width} height={height} decoding="async" loading={eager ? 'eager' : 'lazy'} />

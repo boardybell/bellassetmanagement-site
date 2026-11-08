@@ -1,0 +1,7 @@
+Created all five wordmark packages and three monogram proposals, with outlined SVGs, requested PNG exports, and previews.
+
+- [Wordmark comparison](wordmark-comparison.png)
+- [Monogram comparison](monogram/monogram-comparison.png)
+- [Typeface and design notes](NOTES.md)
+
+All SVGs use paths without font references. Export dimensions were validated. Option 01 is my strongest recommendation for the sibling identity.

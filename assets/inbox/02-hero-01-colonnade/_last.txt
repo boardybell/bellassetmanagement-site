@@ -1,0 +1,8 @@
+Completed both 1536×1024 variants in the current directory:
+
+- Untouched originals: `raw-1.png`, `raw-2.png`
+- Navy grades with calm left 45% and fine monochrome grain: `graded-1.png`, `graded-2.png`
+- Exact prompts and grading details: `NOTES.md`
+- Reproducible grading script: `grade.py`
+
+Both graded images were visually checked.

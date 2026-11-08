@@ -1,0 +1,8 @@
+Created both untouched originals and navy-graded variants at 1536×1024:
+
+- `raw-1.png`, `raw-2.png`
+- `graded-1.png`, `graded-2.png`
+- `NOTES.md` with exact prompts and grading details
+- `grade.py` and `crop-review.jpg`
+
+Verified both centered portrait crops. Fine monochrome grain stays within the palette ramps.

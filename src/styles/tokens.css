@@ -1,0 +1,21 @@
+/* Palette and type tokens. Palette copied from bondbellandco-site/styles.css (verified 2026-11-07). */
+@import './fonts.css';
+:root{
+  --cream:#FDF6EC;
+  --navy:#16233B;
+  --navy-deep:#0D1626;
+  --gold:#B98B3E;
+  --gold-ink:#8A6425;
+  --ink:#14120F;
+  --warm:#6E6759;
+  --rule:rgba(22,35,59,0.16);
+  --rule-on-dark:rgba(253,246,236,0.18);
+
+  --font-display:'Playfair Display','Playfair Display Fallback: Georgia','Playfair Display Fallback: Times New Roman',serif;
+  --font-body:'Source Serif 4','Source Serif 4 Fallback: Georgia','Source Serif 4 Fallback: Times New Roman',serif;
+  --font-label:'IBM Plex Sans','IBM Plex Sans Medium Fallback',Arial,sans-serif;
+
+  --gutter:clamp(1.25rem,4vw,3.5rem);
+  --measure:34rem;
+  --ease:cubic-bezier(.2,.6,.2,1);
+}

@@ -1,0 +1,7 @@
+Rebuilt wm-02, wm-05, and monogram-03 using reinforced Libre Bodoni. Minimum sustained hairlines measure about 8% of cap height. All revised glyphs remain visible and connected at 300 px.
+
+Updated `build_wordmarks.py` and regenerated all exports.
+
+- [240 px legibility preview](wordmark-small.png)
+- [Five-option comparison](wordmark-comparison.png)
+- [Measurements and notes](NOTES.md)

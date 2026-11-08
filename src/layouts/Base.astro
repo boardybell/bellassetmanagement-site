@@ -1,0 +1,81 @@
+---
+// Shared document head for every page: meta, Open Graph, Twitter, canonical, favicons,
+// font preloads, noindex switch, and the reveal script. Iterations supply only the body.
+import '../styles/base.css';
+import playfair400 from '../fonts/PlayfairDisplay-400.woff2?url';
+import serif400 from '../fonts/SourceSerif4-400.woff2?url';
+import plex500 from '../fonts/IBMPlexSans-500.woff2?url';
+import { company } from '../content/site';
+import { url } from '../lib/url';
+
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+  ogImage?: string;
+  themeColor?: string;
+  lang?: string;
+  preload?: ('display' | 'body' | 'label')[];
+}
+const {
+  title,
+  description = company.descriptor,
+  noindex = false,
+  ogImage = url('/share-card.png'),
+  themeColor = '#FDF6EC',
+  preload = ['display', 'body', 'label'],
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogAbs = new URL(ogImage, Astro.site).href;
+const fontMap = { display: playfair400, body: serif400, label: plex500 };
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+{noindex && <meta name="robots" content="noindex, nofollow">}
+{preload.map((k) => <link rel="preload" href={fontMap[k]} as="font" type="font/woff2" crossorigin>)}
+<meta name="theme-color" content={themeColor}>
+<link rel="icon" href={url('/favicon.svg')} type="image/svg+xml">
+<link rel="icon" href={url('/favicon-32.png')} sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href={url('/apple-touch-icon.png')}>
+<link rel="manifest" href={url('/site.webmanifest')}>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content={company.name}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={canonical}>
+<meta property="og:image" content={ogAbs}>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content={`${company.name}. ${company.descriptor}`}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={ogAbs}>
+<script is:inline>document.documentElement.classList.add('js')</script>
+<slot name="head" />
+</head>
+<body class={Astro.props.class}>
+<a class="skip" href="#main">Skip to content</a>
+<slot />
+<script>
+  // Fade-up once on entry. Content stays visible without JS (see base.css).
+  const els = document.querySelectorAll<HTMLElement>('[data-reveal]');
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach((e) => e.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    }, { rootMargin: '0px 0px -5% 0px' });
+    els.forEach((e) => io.observe(e));
+    // Safety net: never leave anything hidden.
+    setTimeout(() => els.forEach((e) => e.classList.add('in')), 2500);
+  }
+</script>
+</body>
+</html>
