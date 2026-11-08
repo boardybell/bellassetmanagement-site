@@ -135,8 +135,8 @@ export const proposals = {
   addressHeading: 'Address letters to',
 };
 
-// Not changed in the copy revision: a new date would imply a review that has not happened.
-export const reviewed = 'November 7, 2026';
+// Reviewed and approved by the CCO on 2026-11-08 (Bond).
+export const reviewed = 'November 8, 2026';
 
 // Footer disclosure: company description, then the standing disclaimers.
 export const legal = [
