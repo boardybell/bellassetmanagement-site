@@ -2,18 +2,22 @@
 
 Static Astro site for Bell Asset Management, deployed to GitHub Pages by GitHub Actions.
 
+The site is the Portico design, chosen 2026-11-07: home (`src/pages/index.astro`), Sales proposals
+(`src/pages/proposals/`), and a 404 page, styled by `src/styles/portico.css`. The ten other designs from
+the review gallery are kept in `archive/iterations/` and at the git tag `gallery-final`.
+
 ## Run
 
 ```sh
 npm ci
-npm run dev            # http://localhost:4321/bellassetmanagement-site/ in gallery mode
+npm run dev            # http://localhost:4321/bellassetmanagement-site/ in staging (gallery) mode
 npm run build          # mode comes from the SITE_MODE file (gallery | production)
 SITE_MODE=production npm run build
 ```
 
 `SITE_MODE` (file at the repo root) switches the whole build:
 
-| | gallery | production |
+| | gallery (staging) | production |
 |---|---|---|
 | site | https://boardybell.github.io | https://bellassetmanagement.com |
 | base | /bellassetmanagement-site | / |
@@ -24,7 +28,7 @@ SITE_MODE=production npm run build
 
 ```sh
 npm run build && npm run qa                 # everything, prints a pass/fail table
-node scripts/qa.mjs --only iterations/04    # one iteration
+node scripts/qa.mjs --only proposals         # one page
 node scripts/qa.mjs --no-lighthouse         # fast loop
 ```
 

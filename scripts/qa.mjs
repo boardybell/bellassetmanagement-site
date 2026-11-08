@@ -98,7 +98,7 @@ for (const p of pages) {
 
   const metaOk = ['name="description"', 'rel="canonical"', 'property="og:title"', 'property="og:image"', 'name="twitter:card"', 'rel="manifest"', 'rel="icon"', 'rel="apple-touch-icon"'].filter((k) => !html.includes(k));
   record(name, 'head metadata', metaOk.length === 0, metaOk.join(' '));
-  const isGallery = !PROD || name.startsWith('/iterations');
+  const isGallery = !PROD || name.startsWith('/iterations') || name.endsWith('404.html'); // 404 pages are never indexed
   const noindex = /name="robots" content="noindex/.test(html);
   record(name, isGallery ? 'noindex present (gallery)' : 'indexable (production)', isGallery ? noindex : !noindex, '');
 

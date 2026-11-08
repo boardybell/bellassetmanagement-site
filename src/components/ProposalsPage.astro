@@ -5,12 +5,12 @@ import Base from '../layouts/Base.astro';
 import Wordmark from './Wordmark.astro';
 import Legal from './Legal.astro';
 import { company, contact, proposals } from '../content/site';
-import { url } from '../lib/url';
+import { url, isProduction } from '../lib/url';
 interface Props { n?: string; cls?: string; dark?: boolean }
 const { n, cls = '', dark = false } = Astro.props;
 const home = url(n ? `/iterations/${n}/` : '/');
 ---
-<Base title={`${proposals.title} · ${company.name}`} description={proposals.description} noindex={!!n} class={`${cls} doc-page${dark ? ' doc-dark' : ''}`} themeColor={dark ? '#16233B' : '#FDF6EC'}>
+<Base title={`${proposals.title} · ${company.name}`} description={proposals.description} noindex={!!n || !isProduction} class={`${cls} doc-page${dark ? ' doc-dark' : ''}`} themeColor={dark ? '#16233B' : '#FDF6EC'}>
   <div data-ground={dark ? 'dark' : undefined}>
     <header class="doc-head"><a href={home} class="doc-mark"><Wordmark tone={dark ? 'cream' : 'black'} width={240} alt={`${company.name} home`} /></a></header>
     <main id="main" class="doc">
