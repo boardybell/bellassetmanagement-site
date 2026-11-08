@@ -9,8 +9,7 @@ import Principal from '../../../components/content/Principal.astro';
 import Contact from '../../../components/content/Contact.astro';
 import hero from '../../../assets/img/hero-04-timber.jpg';
 import beams from '../../../assets/img/sect-04-beams.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import '../../../iterations/04/style.css';
 ---
 <Base title={company.name} noindex class="i04">
@@ -29,14 +28,12 @@ import '../../../iterations/04/style.css';
     <div class="grid">
       <figure class="hero-fig">
         <Photo src={hero} alt="" priority class="hero-img" sizes="(min-width: 84rem) 84rem, 100vw" />
-        <figcaption><span>Timber and granite · High country</span></figcaption>
       </figure>
     </div>
     <section class="grid intro" aria-label="Statement">
-      <p class="thesis" data-reveal>{iterations[3].thesis}</p>
+      <p class="thesis" data-reveal>{company.headline}</p>
       <div class="intro-side" data-reveal>
-        <p class="descriptor meta">{company.descriptor}</p>
-        <p class="statement">{statement}</p>
+        <p class="statement">{company.lede}</p>
       </div>
     </section>
 
@@ -44,7 +41,6 @@ import '../../../iterations/04/style.css';
       <div class="sect-head"><span class="num" aria-hidden="true">01</span><h2 id="h-holdings">Holdings</h2></div>
       <figure class="media" data-reveal>
         <Photo src={beams} alt="" sizes="(min-width: 900px) 34vw, 30rem" widths={[480, 640, 819]} />
-        <figcaption><span>Beam ends · Dry-laid wall</span></figcaption>
       </figure>
       <div class="body"><Holdings level={3} /></div>
     </section>

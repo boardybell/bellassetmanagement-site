@@ -1,9 +1,9 @@
 ---
 import Layout from '../../../../iterations/05/Layout.astro';
 import Holdings from '../../../../components/content/Holdings.astro';
-import { company } from '../../../../content/site';
+import { company, holdingsIntro } from '../../../../content/site';
 ---
-<Layout title={`Holdings · ${company.name}`} current="holdings/" heading="Holdings" eyebrow="Operating companies" description="The operating companies held by Bell Asset Management.">
-  <p class="lede" data-reveal>Bell Asset Management holds the operating businesses below. Each links to its own site.</p>
+<Layout title={`Holdings · ${company.name}`} current="holdings/" heading="Holdings" eyebrow="Businesses and assets" description="Holdings of Bell Asset Management: Bond Bell & Co LLC, its Bell Family Office practice, and real estate and capital assets.">
+  <p class="lede" data-reveal>{holdingsIntro}</p>
   <Holdings level={2} />
 </Layout>

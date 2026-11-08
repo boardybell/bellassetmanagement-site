@@ -17,7 +17,7 @@
 .i09 .cover h1 img{width:clamp(240px,40vw,520px);height:auto}
 .i09 .plate{width:100%;max-width:60rem;margin:0}
 .i09 .plate img{width:100%;height:auto;display:block}
-.i09 .thesis{font-family:var(--font-display);font-size:clamp(1.9rem,4vw,3.6rem);line-height:1.14;max-width:22ch;text-wrap:balance}
+.i09 .thesis{font-family:var(--font-display);font-size:clamp(1.8rem,3.4vw,3.1rem);line-height:1.15;max-width:24ch;text-wrap:balance}
 .i09 .descriptor,.i09 .label,.i09 .holding-place,.i09 .principal-title,.i09 .contact-label{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .i09 .descriptor{max-width:36rem;line-height:1.8}
 .i09 .statement{max-width:44rem;margin:clamp(4rem,9vw,7rem) auto 0;text-align:center;font-size:clamp(1.2rem,1.8vw,1.45rem);line-height:1.75;color:var(--cream)}
@@ -58,3 +58,4 @@
   .i09 .contact{grid-template-columns:1fr}
   .i09 .holding{padding:1.5rem}
 }
+.i09 .cover .lede{max-width:38rem;font-size:clamp(1.0625rem,1.5vw,1.25rem);line-height:1.7;color:var(--cream)}

@@ -10,10 +10,8 @@ import Contact from '../../../components/content/Contact.astro';
 import hero from '../../../assets/img/hero-11-portico.jpg';
 import cornice from '../../../assets/img/plate-11-cornice.jpg';
 import entry from '../../../assets/img/plate-11-entry.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import '../../../iterations/11/style.css';
-const it = iterations.find((x) => x.n === '11')!;
 ---
 <Base title={company.name} noindex class="i11" themeColor="#0D1626">
   <header class="hero" data-ground="dark">
@@ -27,8 +25,7 @@ const it = iterations.find((x) => x.n === '11')!;
       </nav>
     </div>
     <div class="hero-copy">
-      <p class="thesis" data-reveal>{it.thesis}</p>
-      <p class="hero-sub" data-reveal>Holding company · {company.city}</p>
+      <p class="thesis" data-reveal>{company.headline}</p>
     </div>
   </header>
   <main id="main" class="wrap">
@@ -37,11 +34,9 @@ const it = iterations.find((x) => x.n === '11')!;
       <div class="company">
         <figure class="plate" data-reveal>
           <div class="plate-frame"><Photo src={cornice} alt="" sizes="(min-width: 900px) 26rem, 20rem" widths={[400, 640, 1024]} /></div>
-          <figcaption class="cap">Bracketed cornice</figcaption>
         </figure>
         <div>
-          <p class="descriptor meta" data-reveal>{company.descriptor}</p>
-          <p class="statement" data-reveal>{statement}</p>
+          <p class="statement" data-reveal>{company.lede}</p>
         </div>
       </div>
     </section>
@@ -58,7 +53,6 @@ const it = iterations.find((x) => x.n === '11')!;
       <div class="contact-wrap">
         <figure class="plate" data-reveal>
           <div class="plate-frame"><Photo src={entry} alt="" sizes="18rem" widths={[400, 640]} /></div>
-          <figcaption class="cap">Sidelights and transom</figcaption>
         </figure>
         <div class="contact bays"><Contact /></div>
       </div>

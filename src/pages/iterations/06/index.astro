@@ -11,14 +11,13 @@ import a from '../../../assets/img/seq-06a-threshold.jpg';
 import b from '../../../assets/img/seq-06b-fence.jpg';
 import c from '../../../assets/img/seq-06c-river.jpg';
 import d from '../../../assets/img/seq-06d-barn.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import '../../../iterations/06/style.css';
 const seq = [
-  { id: 'statement', img: a, cap: 'Threshold' },
-  { id: 'holdings', img: b, cap: 'Fence line, winter' },
-  { id: 'principal', img: c, cap: 'River stones' },
-  { id: 'contact', img: d, cap: 'Gable end' },
+  { id: 'statement', img: a },
+  { id: 'holdings', img: b },
+  { id: 'principal', img: c },
+  { id: 'contact', img: d },
 ];
 ---
 <Base title={company.name} noindex class="i06">
@@ -27,7 +26,6 @@ const seq = [
       {seq.map((s, i) => (
         <div class="layer" data-for={s.id} data-active={i === 0 ? '' : undefined}>
           <Photo src={s.img} alt="" priority={i === 0} sizes="(min-width: 900px) 45vw, 100vw" widths={[640, 1024]} />
-          <p class="layer-cap">{s.cap}</p>
         </div>
       ))}
     </div>
@@ -45,9 +43,8 @@ const seq = [
       </header>
       <main id="main">
         <section class="step" data-step="statement" aria-label="Statement">
-          <p class="descriptor meta" data-reveal>{company.descriptor}</p>
-          <p class="thesis" data-reveal>{iterations[5].thesis}</p>
-          <p class="statement" data-reveal>{statement}</p>
+          <p class="thesis" data-reveal>{company.headline}</p>
+          <p class="statement" data-reveal>{company.lede}</p>
         </section>
         <section class="step" id="holdings" data-step="holdings" aria-labelledby="h-holdings">
           <div class="inline"><Photo src={b} alt="" sizes="100vw" widths={[640, 1024]} /></div>

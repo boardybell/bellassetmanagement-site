@@ -82,6 +82,12 @@ for (const p of pages) {
   const hits = BANNED.filter((r) => r.test(textOf(scoped) + ' ' + attrs(scoped))).map(String);
   record(name, 'no banned words', hits.length === 0, hits.join(' '));
 
+  // Retired positioning (owner's copy revision, 2026-11-07). Scans everything, footer included.
+  // "Bell Family Office" is a proper name and is not matched.
+  const RETIRED = [/Bell family's/i, /family's own/i, /family's (operating|enterprises|businesses)/i, /privately held holding/i, /holds nothing/i, /sells nothing/i, /this site exists/i, /operating companies/i, /does not lead anywhere/i];
+  const stale = RETIRED.filter((r) => r.test(textOf(html) + ' ' + attrs(html))).map(String);
+  record(name, 'no retired positioning', stale.length === 0, stale.join(' '));
+
   if (PROD) record(name, 'no [CONFIRM] placeholders', !/\[CONFIRM/.test(html), '');
 
   const title = pageTitle(html);

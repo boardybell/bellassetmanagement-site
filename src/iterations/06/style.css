@@ -18,7 +18,7 @@
 .i06 .step:first-of-type{border-top:0;min-height:calc(100vh - 7.5rem)}
 .i06 .inline{display:none}
 .i06 .step-num,.i06 .holding-place,.i06 .principal-title,.i06 .contact-label,.i06 .descriptor{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
-.i06 .thesis{margin-top:1.5rem;font-family:var(--font-display);font-size:clamp(2.1rem,3.6vw,3.6rem);line-height:1.12;max-width:17ch;text-wrap:balance}
+.i06 .thesis{font-family:var(--font-display);font-size:clamp(1.9rem,3vw,3rem);line-height:1.15;max-width:22ch;text-wrap:balance}
 .i06 .statement{margin-top:2rem;font-size:clamp(1.0625rem,1.3vw,1.1875rem);line-height:1.75;max-width:34rem}
 .i06 h2{margin-top:1rem;font-size:clamp(2rem,3.4vw,3rem)}
 .i06 .holdings{margin-top:2.5rem;display:grid;gap:2.5rem}

@@ -8,8 +8,7 @@ import Holdings from '../../../components/content/Holdings.astro';
 import Principal from '../../../components/content/Principal.astro';
 import Contact from '../../../components/content/Contact.astro';
 import plate from '../../../assets/img/plate-03-stair.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import '../../../iterations/03/style.css';
 ---
 <Base title={company.name} noindex class="i03">
@@ -27,13 +26,11 @@ import '../../../iterations/03/style.css';
   <main id="main">
     <section class="hero" aria-label="Statement">
       <div>
-        <p class="kicker meta" data-reveal>{company.descriptor}</p>
-        <p class="thesis" data-reveal>{iterations[2].thesis}</p>
-        <p class="statement" data-reveal>{statement}</p>
+        <p class="thesis" data-reveal>{company.headline}</p>
+        <p class="statement" data-reveal>{company.lede}</p>
       </div>
       <figure class="plate" data-reveal>
         <div class="plate-frame"><Photo src={plate} alt="" priority sizes="(min-width: 900px) 25rem, 20rem" widths={[400, 640, 819]} /></div>
-        <figcaption class="caption">Plate I · Limestone stair</figcaption>
       </figure>
     </section>
 

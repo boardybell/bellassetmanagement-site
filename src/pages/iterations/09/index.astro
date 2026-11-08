@@ -8,8 +8,7 @@ import Holdings from '../../../components/content/Holdings.astro';
 import Principal from '../../../components/content/Principal.astro';
 import Contact from '../../../components/content/Contact.astro';
 import hero from '../../../assets/img/hero-09-granite.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import '../../../iterations/09/style.css';
 ---
 <Base title={company.name} noindex class="i09" themeColor="#16233B">
@@ -30,10 +29,9 @@ import '../../../iterations/09/style.css';
         <section class="cover corners" aria-label="Statement">
           <h1><Wordmark tone="cream" width={520} /></h1>
           <figure class="plate corners"><Photo src={hero} alt="" priority sizes="(min-width: 78rem) 60rem, 90vw" /></figure>
-          <p class="thesis" data-reveal>{iterations[8].thesis}</p>
-          <p class="descriptor meta" data-reveal>{company.descriptor}</p>
+          <p class="thesis" data-reveal>{company.headline}</p>
+          <p class="lede" data-reveal>{company.lede}</p>
         </section>
-        <p class="statement" data-reveal>{statement}</p>
 
         <section class="sect" id="holdings" aria-labelledby="h-holdings">
           <div class="sect-head corners"><p class="label meta">Section I</p><h2 id="h-holdings" data-reveal>Holdings</h2></div>

@@ -2,17 +2,15 @@
 import Layout from '../../../iterations/05/Layout.astro';
 import Photo from '../../../components/Photo.astro';
 import hero from '../../../assets/img/hero-05-lake.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import { url } from '../../../lib/url';
 ---
 <Layout title={company.name} current="">
   <section class="hero" aria-label="Statement">
     <div class="hero-media"><Photo src={hero} alt="" priority sizes="(min-width: 900px) 50vw, 100vw" widths={[640, 1024, 1440]} /></div>
     <div class="hero-copy">
-      <p class="eyebrow meta" data-reveal>{company.descriptor}</p>
-      <p class="thesis" data-reveal>{iterations[4].thesis}</p>
-      <p class="statement" data-reveal>{statement}</p>
+      <p class="thesis" data-reveal>{company.headline}</p>
+      <p class="statement" data-reveal>{company.lede}</p>
       <div class="more" data-reveal>
         <a href={url('/iterations/05/holdings/')}>Holdings</a>
         <a href={url('/iterations/05/principal/')}>Principal</a>

@@ -15,7 +15,7 @@
 .i04 figcaption::after{content:"";height:1px;background:var(--gold);order:2}
 .i04 figcaption span{order:1}
 .i04 .intro{margin-top:clamp(3rem,6vw,5rem);row-gap:2rem}
-.i04 .thesis{grid-column:1 / span 6;align-self:start;font-family:var(--font-display);font-size:clamp(2.1rem,4.4vw,4rem);line-height:1.1;text-wrap:balance}
+.i04 .thesis{grid-column:1 / span 6;align-self:start;font-family:var(--font-display);font-size:clamp(1.9rem,3.3vw,3.1rem);line-height:1.14;text-wrap:balance}
 .i04 .intro-side{grid-column:8 / -1;align-self:start;display:grid;gap:1.25rem;padding-top:.6rem;border-top:1px solid var(--gold)}
 .i04 .descriptor{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);line-height:1.8}
 .i04 .statement{font-size:clamp(1.0625rem,1.3vw,1.1875rem);line-height:1.75}
@@ -62,3 +62,4 @@
   .i04 .hero-img{aspect-ratio:4/3}
   .i04 .sect--principal .principal-portrait{grid-column:1 / span 9}
 }
+.i04 .hero-fig,.i04 .media{padding-bottom:1rem;border-bottom:1px solid var(--gold)}

@@ -10,13 +10,13 @@ import { url } from '../../lib/url';
 const shots = import.meta.glob<{ default: ImageMetadata }>('../../assets/gallery/*.png', { eager: true });
 const shot = (n: string, kind: 'desktop' | 'mobile') => shots[`../../assets/gallery/${n}-${kind}.png`]?.default;
 ---
-<Base title="Design iterations · Bell Asset Management" description="Eleven design iterations for the Bell Asset Management website, for internal review." noindex>
+<Base title="Design iterations · Bell Asset Management" description="Design versions of the Bell Asset Management website, for internal review." noindex>
   <header class="g-head">
     <Wordmark width={300} />
   </header>
   <main id="main" class="g-main">
     <h1>Design iterations</h1>
-    <p class="g-lede">Eleven complete builds in four families. Each link opens the live iteration. Choose by number; hybrids are welcome.</p>
+    <p class="g-lede">Eleven design versions of the Bell Asset Management site in four families. All use the same copy. Choose a version by number, or name a combination of two.</p>
     <ol class="g-grid">
       {iterations.map((it) => {
         const d = shot(it.n, 'desktop'); const m = shot(it.n, 'mobile');
@@ -29,7 +29,6 @@ const shot = (n: string, kind: 'desktop' | 'mobile') => shots[`../../assets/gall
             <div class="g-meta">
               <p class="g-num meta"><span>{it.n}</span> {it.family}</p>
               <h2><a href={url(`/iterations/${it.n}/`)}>{it.name}</a></h2>
-              <p class="g-thesis">{it.thesis}</p>
               <p class="g-why">{it.rationale}</p>
               <p class="g-pages meta">{it.pages.length === 1 ? 'Single page' : `${it.pages.length} pages: ${it.pages.map((p) => p.label).join(', ')}`}</p>
               <p class="g-full meta">Full-page screenshots: <a href={url(`/gallery/${it.n}-desktop-full.webp`)}>desktop</a> · <a href={url(`/gallery/${it.n}-mobile-full.webp`)}>mobile</a></p>
@@ -58,7 +57,6 @@ const shot = (n: string, kind: 'desktop' | 'mobile') => shots[`../../assets/gall
   h2{font-size:1.75rem;margin-top:.25rem}
   h2 a{text-decoration:none}
   h2 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
-  .g-thesis{font-family:var(--font-display);font-size:1.25rem;line-height:1.35;margin-top:.5rem}
   .g-why{margin-top:.75rem;max-width:var(--measure)}
   .g-pages{margin-top:.75rem;font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--warm)}
   .g-full{margin-top:.5rem;font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--warm)}

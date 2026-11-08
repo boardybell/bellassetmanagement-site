@@ -8,8 +8,7 @@ import Holdings from '../../../components/content/Holdings.astro';
 import Principal from '../../../components/content/Principal.astro';
 import Contact from '../../../components/content/Contact.astro';
 import door from '../../../assets/img/plate-07-door.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import '../../../iterations/07/style.css';
 ---
 <Base title={company.name} noindex class="i07">
@@ -26,18 +25,13 @@ import '../../../iterations/07/style.css';
   </header>
   <main id="main">
     <section class="wrap hero" aria-labelledby="h-company">
-      <h1 id="h-company" data-reveal>Bell Asset Management</h1>
-      <p class="thesis" data-reveal>{iterations[6].thesis}</p>
-      <div class="hero-foot" data-reveal>
-        <p class="descriptor meta">{company.descriptor}</p>
-      </div>
+      <h1 id="h-company" class="thesis" data-reveal>{company.headline}</h1>
     </section>
     <section class="wrap statement-row" aria-label="Statement">
       <figure class="accent" data-reveal>
         <Photo src={door} alt="" sizes="(min-width: 860px) 18rem, 12rem" widths={[400, 640]} />
-        <figcaption>Bronze and oak</figcaption>
       </figure>
-      <p class="statement" data-reveal>{statement}</p>
+      <p class="statement" data-reveal>{company.lede}</p>
     </section>
     <section class="wrap sect" id="holdings" aria-labelledby="h-holdings">
       <h2 id="h-holdings" data-reveal>Holdings</h2>

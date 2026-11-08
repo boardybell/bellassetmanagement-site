@@ -3,27 +3,22 @@ import Layout from '../../../iterations/10/Layout.astro';
 import Photo from '../../../components/Photo.astro';
 import Contact from '../../../components/content/Contact.astro';
 import hero from '../../../assets/img/hero-10-arcade.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import { url } from '../../../lib/url';
 ---
 <Layout title={company.name} current="">
   <section class="hero" data-ground="dark" aria-label="Thesis">
     <Photo src={hero} alt="" priority class="hero-img" />
     <div class="hero-copy">
-      <p class="thesis" data-reveal>{iterations[9].thesis}</p>
-      <p class="hero-sub" data-reveal>Holding company · {company.city}</p>
+      <p class="thesis" data-reveal>{company.headline}</p>
+      <p class="hero-lede" data-reveal>{company.lede}</p>
     </div>
   </section>
   <div class="dissolve" aria-hidden="true"></div>
   <div class="body">
-    <section class="narrow" aria-label="Statement">
-      <p class="descriptor meta" data-reveal>{company.descriptor}</p>
-      <p class="statement" data-reveal>{statement}</p>
-    </section>
     <div class="links" data-reveal>
-      <a href={url('/iterations/10/holdings/')}><strong>Holdings</strong><span>{'Bond Bell & Co LLC and Bell Family Office.'}</span></a>
-      <a href={url('/iterations/10/principal/')}><strong>Principal</strong><span>Bond Bell.</span></a>
+      <a href={url('/iterations/10/holdings/')}><strong>Holdings</strong><span>{'Bond Bell & Co LLC, real estate, and capital assets.'}</span></a>
+      <a href={url('/iterations/10/principal/')}><strong>Principal</strong><span>Bond Bell, principal of the company.</span></a>
     </div>
     <section class="contact-sect" id="contact" aria-labelledby="h-contact">
       <h2 id="h-contact" data-reveal>Contact</h2>

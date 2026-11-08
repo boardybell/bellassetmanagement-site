@@ -21,7 +21,7 @@
 .i02 .band picture,.i02 .band img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
 .i02 .page{padding:clamp(3rem,7vw,6rem) clamp(1.5rem,6vw,6rem) clamp(4rem,8vw,7rem);max-width:60rem}
 .i02 .eyebrow,.i02 .holding-place,.i02 .principal-title,.i02 .contact-label{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
-.i02 .thesis{font-family:var(--font-display);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.14;max-width:20ch;margin-top:1.25rem;text-wrap:balance}
+.i02 .thesis{font-family:var(--font-display);font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.16;max-width:24ch;text-wrap:balance}
 .i02 .statement{margin-top:2.5rem;font-size:clamp(1.125rem,1.6vw,1.3rem);line-height:1.75;max-width:38rem}
 .i02 .descriptor{margin-top:1.5rem;max-width:38rem;padding-left:1.25rem;border-left:1px solid var(--gold)}
 .i02 .page h1{font-size:clamp(2.4rem,5vw,4rem);line-height:1.1;margin-top:.9rem}
@@ -48,6 +48,7 @@
 .i02 .legal{display:grid;gap:1rem;font-size:.875rem;line-height:1.7;max-width:52rem}
 .i02 .nf{padding:clamp(4rem,10vw,8rem) clamp(1.5rem,6vw,6rem)}
 .i02 .nf p{margin-top:1.25rem}
+.i02 .practice{grid-column:2}
 @media (max-width:899px){
   .i02 .foot{padding-left:var(--gutter);padding-right:var(--gutter)}
   .i02 .shell{grid-template-columns:1fr}
@@ -59,7 +60,7 @@
   .i02 .rail-nav[data-open]{display:block}
   .i02 .rail-foot{display:none}
   .i02 .holding{grid-template-columns:1fr}
-  .i02 .holding-place,.i02 .holding-body,.i02 .holding-link{grid-column:1;grid-row:auto;padding-top:0}
+  .i02 .holding-place,.i02 .holding-body,.i02 .holding-link,.i02 .practice{grid-column:1;grid-row:auto;padding-top:0}
   .i02 .principal{grid-template-columns:1fr}
   .i02 .principal-portrait{max-width:16rem}
 }

@@ -12,7 +12,7 @@
 .i01 .nav a:hover{color:var(--gold)}
 .i01 .menu-btn{display:none;background:none;border:1px solid rgba(253,246,236,.4);padding:.6rem .9rem;cursor:pointer;color:var(--cream)}
 .i01 .hero-copy{align-self:end;padding:0 var(--gutter) clamp(3rem,8vh,6rem);max-width:56rem}
-.i01 .thesis{font-family:var(--font-display);font-weight:400;font-size:clamp(2.1rem,4.8vw,4.25rem);line-height:1.12;letter-spacing:-.005em;max-width:17ch;text-wrap:balance}
+.i01 .thesis{font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,3.9vw,3.5rem);line-height:1.14;letter-spacing:-.005em;max-width:21ch;text-wrap:balance}
 .i01 .hero-sub{margin-top:1.5rem;font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
 .i01 main{padding:clamp(4rem,10vw,8rem) var(--gutter) 0}
 .i01 .col{max-width:var(--col);margin:0 auto}
@@ -58,3 +58,4 @@
   .i01 .contact{grid-template-columns:1fr;gap:2.5rem}
 }
 @media (prefers-reduced-motion:reduce){.i01 .nav{transition:none!important}}
+.i01 .hero-lede{margin-top:1.5rem;max-width:34rem;font-size:clamp(1.0625rem,1.4vw,1.25rem);line-height:1.65;color:rgba(253,246,236,.92)}

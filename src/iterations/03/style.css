@@ -10,7 +10,7 @@
 .i03 main{padding:0 var(--gutter)}
 .i03 .hero{max-width:76rem;margin:clamp(3.5rem,8vw,7rem) auto 0;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(2.5rem,6vw,6rem);align-items:center}
 .i03 .kicker,.i03 .holding-place,.i03 .principal-title,.i03 .contact-label,.i03 .caption,.i03 .sect-num{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
-.i03 .thesis{margin-top:1.5rem;font-family:var(--font-display);font-size:clamp(2.25rem,5.4vw,5rem);line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+.i03 .thesis{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.6rem);line-height:1.1;letter-spacing:-.01em;text-wrap:balance}
 .i03 .statement{margin-top:2.25rem;font-size:clamp(1.125rem,1.5vw,1.25rem);line-height:1.75;max-width:36rem}
 .i03 .plate{margin:0;justify-self:end;width:min(100%,25rem)}
 .i03 .plate-frame{padding:.9rem;border:1px solid var(--gold);background:#fff8ee}
@@ -41,6 +41,7 @@
 .i03 .foot{max-width:76rem;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:2rem clamp(2rem,5vw,5rem);align-items:start}
 .i03 .foot img{width:200px;height:auto}
 .i03 .legal{display:grid;gap:1rem;font-size:.875rem;line-height:1.7;color:var(--ink)}
+.i03 .practice{grid-column:2}
 @media (max-width:900px){
   .i03 .hero{grid-template-columns:1fr}
   .i03 .plate{justify-self:start;width:min(100%,20rem)}
@@ -56,7 +57,7 @@
   .i03 .nav li+li{border-left:0;border-top:1px solid var(--rule)}
   .i03 .nav a{padding:.9rem 0}
   .i03 .holding{grid-template-columns:1fr}
-  .i03 .holding-place,.i03 .holding-name,.i03 .holding-body,.i03 .holding-link{grid-column:1;grid-row:auto}
+  .i03 .holding-place,.i03 .holding-name,.i03 .holding-body,.i03 .holding-link,.i03 .practice{grid-column:1;grid-row:auto}
   .i03 .principal{grid-template-columns:1fr}
   .i03 .principal-portrait{max-width:13rem}
   .i03 .contact{grid-template-columns:1fr}

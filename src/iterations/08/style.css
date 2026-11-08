@@ -14,7 +14,7 @@
 .i08 .masthead h1 img{width:clamp(250px,42vw,560px);height:auto}
 .i08 .descriptor{margin:1.75rem auto 0;max-width:40rem;font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);line-height:1.8}
 .i08 .thesis-row{padding-block:clamp(2.5rem,6vw,5rem);border-bottom:1px solid var(--ink);text-align:center}
-.i08 .thesis{font-family:var(--font-display);font-size:clamp(1.9rem,4.2vw,3.9rem);line-height:1.12;max-width:22ch;margin:0 auto;text-wrap:balance}
+.i08 .thesis{font-family:var(--font-display);font-size:clamp(1.8rem,3.4vw,3.2rem);line-height:1.14;max-width:26ch;margin:0 auto;text-wrap:balance}
 .i08 .band{border-bottom:1px solid var(--ink);padding-block:1rem}
 .i08 .band img{width:100%;height:auto;aspect-ratio:4/1;object-fit:cover}
 .i08 .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:1rem clamp(2rem,5vw,5rem);padding-block:clamp(2.5rem,5vw,4.5rem);border-bottom:1px solid var(--ink)}
@@ -44,11 +44,12 @@
 .i08 .foot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:1.5rem clamp(2rem,5vw,5rem);border-top:3px double var(--ink);padding-top:2rem}
 .i08 .foot img{width:190px;height:auto}
 .i08 .legal{display:grid;gap:1rem;font-size:.875rem;line-height:1.7}
+.i08 .practice{grid-column:3}
 @media (max-width:960px){.i08 .run-place{display:none}}
 @media (max-width:860px){
   .i08 .row,.i08 .foot{grid-template-columns:1fr}
   .i08 .holding{grid-template-columns:1fr}
-  .i08 .holding-name,.i08 .holding-place,.i08 .holding-body,.i08 .holding-link{grid-column:1;grid-row:auto;padding-top:0}
+  .i08 .holding-name,.i08 .holding-place,.i08 .holding-body,.i08 .holding-link,.i08 .practice{grid-column:1;grid-row:auto;padding-top:0}
 }
 @media (max-width:640px){
   .i08 .run-line{flex-wrap:wrap;padding-block:.5rem}
@@ -66,3 +67,4 @@
 }
 .i08 .mt{margin-top:2rem}
 .i08 main .row:last-child{border-bottom:0}
+.i08 .thesis-row .lede{margin:1.5rem auto 0;max-width:40rem;font-size:clamp(1.0625rem,1.5vw,1.25rem);line-height:1.7}

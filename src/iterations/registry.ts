@@ -1,46 +1,46 @@
-// The ten design iterations. The gallery index reads this; each iteration's pages live in
+// The design iterations. The gallery index reads this; each iteration's pages live in
 // src/pages/iterations/NN/ and their styles and parts in src/iterations/NN/.
+// All iterations use the same copy (src/content/site.ts); descriptions here compare layouts only.
 export interface Iteration {
   n: string;
   family: 'Ledger' | 'Architectural' | 'Typographic' | 'Inverse';
   name: string;
-  thesis: string;
-  rationale: string; // two sentences
+  rationale: string; // factual layout description, two sentences
   pages: { href: string; label: string }[]; // relative to /iterations/NN/
 }
 
 export const iterations: Iteration[] = [
-  { n: '01', family: 'Ledger', name: 'Colonnade', thesis: 'Ownership is a quiet job, done every day.',
-    rationale: 'The closest sibling to bondbellandco.com: cream ground, a full-bleed navy colonnade, and the thesis set over it in Playfair. One page, read top to bottom like a single sheet of letterhead.',
+  { n: '01', family: 'Ledger', name: 'Colonnade',
+    rationale: 'Single page with a full-width navy photograph of a colonnade, the headline set over it, and navigation at the top right. Cream sections follow with centered headings; the structure is closest to bondbellandco.com.',
     pages: [{ href: '', label: 'Home' }] },
-  { n: '02', family: 'Ledger', name: 'Cornice', thesis: "The family's enterprises, held under one roof.",
-    rationale: 'The same bones split into three pages, with a fixed left rail carrying the wordmark and navigation. Suits a reader doing diligence who wants to land directly on Holdings or Principal.',
+  { n: '02', family: 'Ledger', name: 'Cornice',
+    rationale: 'Three pages, with navigation in a fixed left rail that also carries the wordmark and email address. A wide navy photograph of a cornice opens the home page, and text runs left-aligned on cream.',
     pages: [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }] },
-  { n: '03', family: 'Ledger', name: 'Plate', thesis: 'One name above the businesses, and a person behind the name.',
-    rationale: 'No full-bleed image. The hero is typographic, with one small architectural plate inset beside it the way a bound report places a frontispiece.',
+  { n: '03', family: 'Ledger', name: 'Plate',
+    rationale: 'Single page with a centered wordmark and navigation in a ruled bar beneath it. There is no full-width image, only a small framed photograph beside the headline, and the sections use a numbered two-column layout.',
     pages: [{ href: '', label: 'Home' }] },
-  { n: '04', family: 'Architectural', name: 'Timber', thesis: 'What the family owns, it keeps in good repair.',
-    rationale: 'Image-led and gridded: each section opens on a large photograph with a gold hairline caption. Mountain-west timber and stone tie the entity to Jackson.',
+  { n: '04', family: 'Architectural', name: 'Timber',
+    rationale: 'Single page on a twelve-column grid. A large warm-toned photograph of timber and stone opens the page, a second photograph sits beside the holdings, and gold rules separate the sections.',
     pages: [{ href: '', label: 'Home' }] },
-  { n: '05', family: 'Architectural', name: 'Lake', thesis: 'Every holding has an owner who reads the mail.',
-    rationale: 'A split-screen hero, image left and type right, across four pages. The most conventional company-site structure of the ten, and the easiest to extend later.',
+  { n: '05', family: 'Architectural', name: 'Lake',
+    rationale: 'Four pages. The home page splits the screen between a navy mountain photograph and the text, and the inner pages place a navy title panel beside the content.',
     pages: [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }, { href: 'contact/', label: 'Contact' }] },
-  { n: '06', family: 'Architectural', name: 'Sequence', thesis: 'The work is mostly stewardship, and stewardship is mostly attention.',
-    rationale: 'A sticky image panel that changes once per section as the reader scrolls: threshold, fence, river, barn. Restrained motion, no parallax, and a static fallback for reduced motion.',
+  { n: '06', family: 'Architectural', name: 'Sequence',
+    rationale: 'Single page with a fixed photograph panel on the left that changes once per section, using four warm-toned images, and the text in the right column. On phones the first image sits above the text.',
     pages: [{ href: '', label: 'Home' }] },
-  { n: '07', family: 'Typographic', name: 'Measure', thesis: 'Owned plainly and kept carefully.',
-    rationale: 'Big type, rules, and whitespace, with a single accent image. Everything is carried by Playfair at display sizes and generous measure.',
+  { n: '07', family: 'Typographic', name: 'Measure',
+    rationale: 'Single page set mainly in type, with a large Playfair headline, full-width rules, and wide spacing. One small photograph accompanies the company description.',
     pages: [{ href: '', label: 'Home' }] },
-  { n: '08', family: 'Typographic', name: 'Rule', thesis: 'The holding company is the part that does not change.',
-    rationale: 'Full-width horizontal rules are the structure: every section is a ruled band, and the navigation is a running header line like a bound ledger.',
+  { n: '08', family: 'Typographic', name: 'Rule',
+    rationale: 'Single page divided by horizontal rules in the manner of a ledger, with navigation in a running line that stays at the top of the screen. A wide navy horizon photograph sits under the headline.',
     pages: [{ href: '', label: 'Home' }] },
-  { n: '09', family: 'Inverse', name: 'Report Cover', thesis: "The structure behind the family's enterprises, and nothing more.",
-    rationale: 'Navy ground and cream type, with the gold twin-corner marks from the Bond Bell & Co report suite translated to the web. Reads like the cover of an annual report.',
+  { n: '09', family: 'Inverse', name: 'Report Cover',
+    rationale: 'Single page on a navy background with cream type. Gold corner marks taken from the Bond Bell & Co report covers frame the opening, the photograph, and each section heading.',
     pages: [{ href: '', label: 'Home' }] },
-  { n: '10', family: 'Inverse', name: 'Arcade', thesis: 'Built to be kept, not sold.',
-    rationale: 'A navy hero that gives way to a cream body as the reader scrolls, across three pages. Pairs the weight of the report covers with the readability of the Ledger pages.',
+  { n: '10', family: 'Inverse', name: 'Arcade',
+    rationale: 'Three pages, each opening on a navy photograph of a stone arcade that blends into a cream body below. Navigation sits over the photograph.',
     pages: [{ href: '', label: 'Home' }, { href: 'holdings/', label: 'Holdings' }, { href: 'principal/', label: 'Principal' }] },
-  { n: '11', family: 'Architectural', name: 'Portico', thesis: 'Built square, and meant to be handed down.',
-    rationale: 'Drawn from the vocabulary of an 1850s eastern North Carolina town house: white frame, Greek Revival symmetry, Italianate brackets, and a later two-story classical portico. The layout borrows the bones: a symmetrical header, entablature bands over each section, and holdings set in pilaster bays.',
+  { n: '11', family: 'Architectural', name: 'Portico',
+    rationale: 'Single page using the forms of a Greek Revival house: a navy photograph of a two-story portico and a symmetrical header with the wordmark between two pairs of links. Each section heading sits in a ruled band, and the holdings are set between vertical rules.',
     pages: [{ href: '', label: 'Home' }] },
 ];

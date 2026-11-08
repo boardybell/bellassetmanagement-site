@@ -8,10 +8,8 @@ import Holdings from '../../../components/content/Holdings.astro';
 import Principal from '../../../components/content/Principal.astro';
 import Contact from '../../../components/content/Contact.astro';
 import hero from '../../../assets/img/hero-01-colonnade.jpg';
-import { company, statement } from '../../../content/site';
-import { iterations } from '../../../iterations/registry';
+import { company } from '../../../content/site';
 import '../../../iterations/01/style.css';
-const it = iterations[0];
 ---
 <Base title={company.name} noindex class="i01" themeColor="#0D1626">
   <header class="hero" data-ground="dark">
@@ -28,19 +26,12 @@ const it = iterations[0];
       </nav>
     </div>
     <div class="hero-copy">
-      <p class="thesis" data-reveal>{it.thesis}</p>
-      <p class="hero-sub" data-reveal>Holding company · {company.city}</p>
+      <p class="thesis" data-reveal>{company.headline}</p>
+      <p class="hero-lede" data-reveal>{company.lede}</p>
     </div>
   </header>
 
   <main id="main">
-    <section class="col" aria-label="Statement">
-      <p class="descriptor meta" data-reveal>{company.descriptor}</p>
-      <p class="statement" data-reveal>{statement}</p>
-    </section>
-
-    <div class="rule" aria-hidden="true"><span></span></div>
-
     <section class="wide" id="holdings" aria-labelledby="h-holdings">
       <h2 id="h-holdings" data-reveal>Holdings</h2>
       <div class="holdings"><Holdings level={3} /></div>

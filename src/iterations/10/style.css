@@ -12,7 +12,7 @@
 .i10 .hero picture,.i10 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
 .i10 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 38% at 50% 78%,rgba(13,22,38,.72),rgba(13,22,38,0) 70%),linear-gradient(180deg,rgba(13,22,38,0) 55%,var(--navy-deep) 100%)}
 .i10 .hero-copy{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gutter) clamp(4rem,12vh,8rem);text-align:center;display:grid;justify-items:center;gap:1.5rem}
-.i10 .thesis{font-family:var(--font-display);font-size:clamp(2.4rem,6vw,5.5rem);line-height:1.05;letter-spacing:-.01em;max-width:16ch;text-wrap:balance}
+.i10 .thesis{font-family:var(--font-display);font-size:clamp(2rem,4.2vw,3.9rem);line-height:1.1;letter-spacing:-.01em;max-width:22ch;text-wrap:balance}
 .i10 .hero-sub{font-family:var(--font-label);font-weight:500;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
 /* The dissolve: a tall gradient band, no text inside it, so contrast holds at every scroll position. */
 .i10 .dissolve{height:clamp(10rem,28vh,18rem);background:linear-gradient(180deg in oklab,var(--navy-deep) 0%,var(--navy) 22%,var(--cream) 100%)}
@@ -61,3 +61,6 @@
   .i10 .links a+a{border-left:0;border-top:1px solid var(--rule)}
   .i10 .principal-portrait{max-width:15rem}
 }
+.i10 .hero-lede{max-width:36rem;font-size:clamp(1.0625rem,1.5vw,1.25rem);line-height:1.65;color:rgba(253,246,236,.92)}
+.i10 .holding-name{text-align:left}
+.i10 .principal-name{text-align:left}

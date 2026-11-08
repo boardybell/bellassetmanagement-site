@@ -7,7 +7,7 @@ import { url, isProduction } from '../lib/url';
   <main id="main" class="nf">
     <a href={url('/')} class="nf-mark"><Wordmark width={280} /></a>
     <h1>Page not found</h1>
-    <p>That address does not lead anywhere on this site.</p>
+    <p>There is no page at this address.</p>
     <p><a href={url(isProduction ? '/' : '/iterations/')}>{isProduction ? 'Go to the home page' : 'Go to the design iterations'}</a></p>
   </main>
 </Base>
